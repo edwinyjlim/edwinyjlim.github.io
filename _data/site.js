@@ -1,20 +1,20 @@
 module.exports = {
   meta: {
-    title: "My Purple Blog",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    title: "Edwin Lim's Technical Writing Portfolio",
+    description: "This is my technical writing portfolio.",
     lang: "en",
     siteUrl: "https://example.com/",
   },
   feed: { // used in feed.xml.njk
-    subtitle: "Lorem ipsum dolor sit amet consecuteor",
+    subtitle: "rss feed stuff",
     filename: "atom.xml",
     path: "/atom.xml",
     id: "https://example.com/",
-    authorName: "John Doe",
-    authorEmail: "johndoe@example.com"
+    authorName: "Edwin Lim",
+    authorEmail: "edwinyjlim@gmail.com"
   },
   hero: { // used in hero section of main page ie. index.html.njk
-    title: "Welcome to my purple blog",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores accusantium deserunt odio esse."
+    title: "Technical Writing",
+    description: "Welcome. I'm Edwin Lim and I built this site to host my portfolio of technical writing samples."
   }
-}
+};

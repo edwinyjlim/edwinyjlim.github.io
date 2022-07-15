@@ -23,6 +23,8 @@ eleventyNavigation:
         {{ site.meta.title }}
       {% endif %}
     </h1>
+
+    {#
     <p class="hero__description">
       {% if site.hero.description %}
         {{ site.hero.description }}
@@ -30,10 +32,27 @@ eleventyNavigation:
         {{ site.meta.description }}
       {% endif %}
     </p>
+    #}
+
+    <p class="hero__description">
+      Welcome. I'm Edwin Lim and I built this site to host my portfolio of technical writing samples. 
+    </p>
+    <p class="hero__description">
+      The technology stack: 
+      <br>
+      <br><b>Eleventy</b> (Node.js) for static site generation.
+      <br><b>Markdown</b> and HTML for text.
+      <br><b>Nunjucks</b> for templating.
+      <br><b>Stylus</b> for CSS preprocessing.
+      <br><b>Git</b> for version control.
+      <br><b>Github Actions</b> for deployment.
+      <br><b>Github Pages</b> for hosting.
+    </p>
+
   </div>
 
   <h2 class="section-title">
-    Latest Posts
+    Writing Samples
     {%- if pagination.pageNumber != 0 %} - Page {{ pagination.pageNumber + 1 }}{% endif %}
   </h2>
   {% include "components/postslist.njk" %}
