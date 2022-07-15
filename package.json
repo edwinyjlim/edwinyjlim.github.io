@@ -1,0 +1,25 @@
+{
+  "name": "tech_writing_portfolio",
+  "version": "1.0.0",
+  "description": "edwin lim's technical writing potrfolio static site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:stylus": "stylus --compress ./stylus/ --out ./static/css/",
+    "watch:stylus": "stylus --watch ./stylus/ --out ./static/css/",
+    "build:11ty": "eleventy",
+    "watch:11ty": "eleventy --serve",
+    "build": "npm run build:stylus && eleventy",
+    "watch": "concurrently -n stylus,11ty \"yarn watch:stylus\" \"yarn watch:11ty\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-navigation": "^0.3.3",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "concurrently": "^7.2.2",
+    "stylus": "^0.58.1"
+  }
+}
