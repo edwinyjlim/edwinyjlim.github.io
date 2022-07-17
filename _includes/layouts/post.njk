@@ -16,21 +16,24 @@ layout: layouts/base.njk
 
   <div class="post_content">
     {{ content | safe }}
-  </div>
 
   <div class="post-tags">
-    <br><hr>
-    {% if not hideTagsList %}
-      <b>Tags: </b>
-      {% for tag in tags %}
-        {% if tag != 'post' %}
-          <a href="{{ '/tags/' | url }}{{ tag | slug }}">{{ tag }}</a>
-          {%- if not loop.last %}, {% endif %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-    <br><br>
-    <a href="{{ '/' | url }}">&larr; Back home</a>
+      <br><hr>
+      {% if not hideTagsList %}
+        <b>Tags: </b>
+        {% for tag in tags %}
+          {% if tag != 'post' %}
+            <a href="{{ '/tags/' | url }}{{ tag | slug }}">{{ tag }}</a>
+            {%- if not loop.last %}, {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      <br><br>
+      <a href="{{ '/' | url }}">&larr; Back home</a>
+    </div>
+
   </div>
+
+
 
 </div>

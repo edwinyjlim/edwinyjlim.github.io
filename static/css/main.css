@@ -16,6 +16,21 @@ img {
   width: 100%;
   height: auto;
 }
+table {
+  border-spacing: 0;
+}
+table th {
+  background-color: rgba(211,211,211,0.369);
+  text-align: left;
+  border: 1px solid;
+  padding: 5px 10px;
+  text-align: center;
+}
+table td {
+  border: 1px solid;
+  border-spacing: 0;
+  padding: 5px 10px;
+}
 h1,
 h2,
 h3,
@@ -95,14 +110,24 @@ a:hover {
 hr {
   border-color: rgba(0,0,0,0.1);
 }
+.text-p-color {
+  color: #7300e6;
+}
 .container,
 .container-sm,
 .container-md {
-  margin: 0 auto;
+  margin-left: 240px;
   padding: 1rem;
   padding-bottom: 2.5rem;
   max-width: 1024px;
   width: calc(100% - 2rem);
+}
+@media screen and (max-width: 640px) {
+  .container,
+  .container-sm,
+  .container-md {
+    margin: 0 auto;
+  }
 }
 .container-sm {
   max-width: 640px;
@@ -154,7 +179,12 @@ body.dark .navbar {
   align-items: center;
   justify-content: space-between;
   max-width: 1024px;
-  margin: 0 auto;
+  margin-left: 240px;
+}
+@media screen and (max-width: 640px) {
+  .navbar__inner {
+    margin: 0 auto;
+  }
 }
 .navbar__links {
   display: none;
@@ -226,7 +256,7 @@ body.dark .navbar__hamburger > svg {
   font-weight: bold;
 }
 .post h2 {
-  border-bottom: 1px dashed;
+  border-bottom: 2px dashed #808080;
   margin-top: 4rem;
   margin-bottom: 1.5rem;
 }
@@ -300,6 +330,18 @@ body.dark .card__date {
   margin: 2rem 0;
   border-bottom: 1px solid #d3d3d3;
 }
+.spacer-1 {
+  margin: 1rem 0;
+}
+.spacer-2 {
+  margin: 2rem 0;
+}
+.spacer-3 {
+  margin: 3rem 0;
+}
+.spacer-4 {
+  margin: 4rem 0;
+}
 .pagination {
   display: flex;
   margin: 1rem 0;
@@ -312,9 +354,19 @@ body.dark .card__date {
 }
 .post_sidebar_nav {
   position: fixed;
+  height: 100%;
+  width: 225px;
   left: 0px;
+  margin-top: 10px;
   padding: 1rem;
+  font-size: 15px;
+  transition: all 0.5s ease;
 }
-.post_sidebar_nav_link {
+.post_sidebar_nav .post_sidebar_nav_link {
   margin: 0.25rem 0;
+}
+@media screen and (max-width: 640px) {
+  .post_sidebar_nav {
+    left: -225px;
+  }
 }

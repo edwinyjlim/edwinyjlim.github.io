@@ -1,9 +1,13 @@
 .container
-  margin 0 auto
+  //margin 0 auto
+  margin-left 240px
   padding 1rem
   padding-bottom 2.5rem
   max-width breakpoints.lg
   width calc(100% - 2rem)
+
+  @media screen and (max-width breakpoints.sm)
+    margin 0 auto
 
 .container-sm
   @extend .container

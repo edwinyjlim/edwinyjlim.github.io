@@ -31,7 +31,7 @@ tags:
 
 # NYC 311 Public API Documentation
 
-***A NOTE*** New York City’s developer documentation (https://api-portal.nyc.gov) is currently unusable. It suffers from several typos, blank sections, conflicting information, dead links, no data schemas, and no examples. So I built my own documentation. Through trial and error, I experimented with the 311 Public API enough to fill in the gaps and offer improvements. 
+***A NOTE*** New York City’s developer documentation (https://api-portal.nyc.gov) is currently unusable. It suffers from several typos, blank sections, conflicting information, dead links, no data schemas, and no examples.Through trial and error, I experimented with the 311 Public API enough to fill in the gaps and offer improvements. 
 
 <div class="divider"></div>
 
@@ -130,7 +130,7 @@ Pass the API Key to the field `Ocp-Apim-Subscription-Key` in the HTTP request he
 
 **Request Header Example**
 
-```
+```bash
 GET https://api.nyc.gov/public/api/Status/CodeBlue HTTP/1.1
 Ocp-Apim-Subscription-Key: {API Key}
 ```
@@ -140,75 +140,94 @@ Ocp-Apim-Subscription-Key: {API Key}
 Get a quick start and connect to the **NYC 311 Public API** by completing the following steps.
 
 1. Create a profile and login to the **NYC API Developers Portal** at [https://api-portal.nyc.gov](https://api-portal.nyc.gov).
-    <details>
+    
+    <details open>
       <summary> Screenshot with annotations in <b style="color: red">red</b>.
       </summary>
-      <img src="/img/quickStartGuideStep1.png">
+      <img src="/img/quickStartGuideStep1.png" style="width: 80%">
     </details>      
 
 2. Click *Products* at the top of the page.
-    - Screenshot with annotations in <b style="color: red">red</b>.
-        ![Step 2](/img/quickStartGuideStep2.png)
+    
+    <details >
+      <summary> Screenshot with annotations in <b style="color: red">red</b>.
+      </summary>
+      <img src="/img/quickStartGuideStep2.png" style="width: 80%">
+    </details>  
         
 3. Select the *NYC 311 Public Developers* product.
-    - Screenshot with annotations in <b style="color: red">red</b>.    
-        ![Step 3](/img/quickStartGuideStep3.png)
+    
+    <details >
+      <summary> Screenshot with annotations in <b style="color: red">red</b>.
+      </summary>
+      <img src="/img/quickStartGuideStep3.png" style="width: 80%">
+    </details>  
         
 4. Type the name of your application and click the *Subscribe* button.
-    - Screenshot with annotations in <b style="color: red">red</b>. 
-        ![Step 4](/img/quickStartGuideStep4.png)
+    
+    <details>
+      <summary> Screenshot with annotations in <b style="color: red">red</b>.
+      </summary>
+      <img src="/img/quickStartGuideStep4.png" style="width: 80%">
+    </details>
         
-5. Click *Profile* at the tope of the page and find the new API Key under the section *Subscriptions.*
-    1. It may take a few minutes for the API Key to be generated.
-    - Screenshot with annotations in <b style="color: red">red</b>.
+5. Click *Profile* at the tope of the page and find the new API Key under the section *Subscriptions.* It may take a few minutes for the API Key to be generated.
+
+    <details >
+      <summary> Screenshot with annotations in <b style="color: red">red</b>.
+      </summary>
+      <img src="/img/quickStartGuideStep1.png" style="width: 80%">
+    </details>  
+
         
-        ![Step 5](/img/QuickStartGuideStep5.png)
-        
-6. Pass the API Key to the field `Ocp-Apim-Subscription-Key` in the header of the HTTP request.
+6. Pass the API Key to the field <code>Ocp-Apim-Subscription-Key</code> in the header of the HTTP request.
+
 7. Make API requests! 
-    - **Postman**
+
+
+**Request Examples**
+
+---
+   
+  - **cURL**
         
-        ![Untitled](NYC%20311%20Public%20API%20Documentation%20adbbc0d828994b13a17e12a868a1a7ab/Untitled%205.png)
+    ```bash
+      curl --location --request GET "https://api.nyc.gov/public/api/Status/CodeBlue" --header "Ocp-Apim-Subscription-Key: {API Key}"
+    ```
         
-    - **cURL**
+  - **Javascript - Node.js**
         
-        ```bash
-        curl --location --request GET "https://api.nyc.gov/public/api/Status/CodeBlue" --header "Ocp-Apim-Subscription-Key: {API Key}"
-        ```
-        
-    - **Javascript - Node.js**
-        
-        ```jsx
-        var request = require('request');
-        var options = {
-          'method': 'GET',
-          'url': 'https://api.nyc.gov/public/api/Status/CodeBlue',
-          'headers': {
-            'Ocp-Apim-Subscription-Key': '{API Key}'
-          }
-        };
-        request(options, function (error, response) {
-          if (error) throw new Error(error);
-          console.log(response.body);
-        });
-        ```
-        
-    - **Python - Requests**
-        
-        ```jsx
-        import requests
-        
-        url = "https://api.nyc.gov/public/api/Status/CodeBlue"
-        
-        payload={}
-        headers = {
+    ```jsx
+      var request = require('request');
+      var options = {
+        'method': 'GET',
+        'url': 'https://api.nyc.gov/public/api/Status/CodeBlue',
+        'headers': {
           'Ocp-Apim-Subscription-Key': '{API Key}'
         }
+      };
+      request(options, function (error, response) {
+        if (error) throw new Error(error);
+        console.log(response.body);
+      });
+    ```
         
-        response = requests.request("GET", url, headers=headers, data=payload)
+  - **Python - Requests**
         
-        print(response.text)
-        ```
+    ```jsx
+      import requests
+      
+      url = "https://api.nyc.gov/public/api/Status/CodeBlue"
+      
+      payload={}
+      headers = {
+        'Ocp-Apim-Subscription-Key': '{API Key}'
+      }
+      
+      response = requests.request("GET", url, headers=headers, data=payload)
+      
+      print(response.text)
+    ```
         
 
 ---
@@ -225,20 +244,30 @@ Get a quick start and connect to the **NYC 311 Public API** by completing the fo
 
 The daily calendar updates regarding New York City Street Parking, Garbage Collection, and Public Schools.
 
-### GET /GetCalendar
+<div class="spacer-2"></div>
+
+
+### <b class="text-p-color">GET</b> /GetCalendar
 
 Get the daily status for Street Parking, Garbage Collection and Public Schools in New York City for a specified date range. 
+
+
+<div class="spacer-2"></div>
 
 **Request Query Parameters**
 
 ---
 
-| field name | required | type | examples | description  |
-| --- | --- | --- | --- | --- |
+
+| **field name**    | **required** | **type** | **examples** | **description**  |
+| ----------------- | ------------ | --- | --- | --- |
 | fromdate | true | string | 07/04/2022 | The date of the first day in the specified date range. Use the format MM/DD/YYYY. |
 | todate | true | string | 07/05/2022 | The date of the final day in the specified date range. Use the format MM/DD/YYYY. |
 
 *NOTE: A single request can only return a maximum of 90 days worth of data. The date range is also inclusive.
+
+<div class="spacer-2"></div>
+
 
 **Request Examples**
 
@@ -282,39 +311,45 @@ Get the daily status for Street Parking, Garbage Collection and Public Schools i
     
     print(response.text)
     ```
-    
+
+
+<div class="spacer-2"></div>
+
 
 **Response Schema**
 
 ---
 
-**days** a*rray*
+**days** *array*
 
 Detailed list of calendar day objects. 
 
-**days.today_id** *integer*
+> **days.today_id** *integer*
 
-The id of a calendar day in YYYYMMDD format. E.g. 07/04/2022 is 20220704
+> The id of a calendar day in YYYYMMDD format. E.g. 07/04/2022 is 20220704
 
-**days.items** *array*
+> **days.items** *array*
 
-A list of New York City service updates for a particular calendar day.
+> A list of New York City service updates for a particular calendar day.
 
-**days.items.exceptionName** *string*
+>> **days.items.exceptionName** *string*
 
-The title of the update issued by a New York City service.
+>> The title of the update issued by a New York City service.
 
-**days.items.details** *string*
+>> **days.items.details** *string*
 
-The description of the update issued by a New York City service.
+>> The description of the update issued by a New York City service.
 
-**days.items.status** *string*
+>> **days.items.status** *string*
 
-The status of the update issued by a New York City service. E.g. “IN EFFECT” “SUSPENDED” “NOT IN SESSION”
+>> The status of the update issued by a New York City service. E.g. “IN EFFECT” “SUSPENDED” “NOT IN SESSION”
 
-**days.items.type** *string*
+>> **days.items.type** *string*
 
-The type of New York City service.
+>> The type of New York City service.
+
+
+<div class="spacer-2"></div>
 
 **Response Examples**
 
@@ -379,9 +414,13 @@ The type of New York City service.
 
 The categories of the New York City 311 contents.
 
-### **GET** /GetCategory
+<div class="spacer-2"></div>
+
+### <b class="text-p-color">GET</b> /GetCategory
 
 Get all the categories and subcategories from the New York City 311 platform.
+
+<div class="spacer-2"></div>
 
 **Request Examples**
 
@@ -426,6 +465,8 @@ Get all the categories and subcategories from the New York City 311 platform.
     print(response.text)
     ```
     
+<div class="spacer-2"></div>
+
 
 **Response Schema**
 
@@ -447,27 +488,29 @@ The id of the category.
 
 A list of subcategories nested under the category. 
 
-**SubCategory.Name** *string*
+> **SubCategory.Name** *string*
 
-The name of the category.
+> The name of the category.
 
-**SubCategory.CategoryURL** *string*
+> **SubCategory.CategoryURL** *string*
 
-A URL to the category’s 311 webpage.
+> A URL to the category’s 311 webpage.
 
-**SubCategory.Id** *string*
+> **SubCategory.Id** *string*
 
-The id of the category.
+> The id of the category.
 
-**SubCategory.ParentCategoryId** *string*
+> **SubCategory.ParentCategoryId** *string*
 
-The id of the parent category.
+> The id of the parent category.
 
-**SubCategory.SubCategory** *array*
+> **SubCategory.SubCategory** *array*
 
-A list of subcategories nested under the category. 
+> A list of subcategories nested under the category. 
 
-**SubCategory.SubCategory.SubCategory…** *can continue nesting*
+>>>**SubCategory.SubCategory.SubCategory…** *can continue nesting*
+
+<div class="spacer-2"></div>
 
 **Response Examples**
 
@@ -535,9 +578,13 @@ A list of subcategories nested under the category.
 
 Find all content from knowledge articles published on New York City’s 311 website. 
 
-### **GET /**GetContent
+<div class="spacer-2"></div>
+
+### <b class="text-p-color">GET</b> /GetContent
 
 Get all relevant content from New York City’s 311 website using text search. 
+
+<div class="spacer-2"></div>
 
 **Request Query Parameters**
 
@@ -599,57 +646,59 @@ Get all relevant content from New York City’s 311 website using text search.
 
 List of published 311 articles.
 
-**KnowledgeArticle.ArticlePublicNumber** *string*
+> **KnowledgeArticle.ArticlePublicNumber** *string*
 
-The unique identifier for the published article.
+> The unique identifier for the published article.
 
-**KnowledgeArticle.Title** *string*
+> **KnowledgeArticle.Title** *string*
 
-The title of the article.
+> The title of the article.
 
-**KnowledgeArticle.Description** *string*
+> **KnowledgeArticle.Description** *string*
 
-A short description of the article.
+> A short description of the article.
 
-**KnowledgeArticle.TotalTitle** *integer*
+> **KnowledgeArticle.TotalTitle** *integer*
 
-The calculated score of how well the SearchText matched the article’s title.
+> The calculated score of how well the SearchText matched the article’s title.
 
-**KnowledgeArticle.TotalContent** *integer*
+> **KnowledgeArticle.TotalContent** *integer*
 
-The calculated score of how well the SearchText matched the article’s contents.
+> The calculated score of how well the SearchText matched the article’s contents.
 
-**KnowledgeArticle.TotalWeight** *integer*
+> **KnowledgeArticle.TotalWeight** *integer*
 
-The total weighted score calculated by summing together KnowledgeArticle.TotalTitle and KnowledgeArticle.TotalContent.
+> The total weighted score calculated by summing together KnowledgeArticle.TotalTitle and KnowledgeArticle.TotalContent.
 
-**KnowledgeArticle.Section** *array*
+> **KnowledgeArticle.Section** *array*
 
-A list of the sections that separate the contents within the article.
+> A list of the sections that separate the contents within the article.
 
-**KnowledgeArticle.Section.Name** *string*
+>> **KnowledgeArticle.Section.Name** *string*
 
-The title of the article’s section.
+>> The title of the article’s section.
 
-**KnowledgeArticle.Section.Content** *string*
+>> **KnowledgeArticle.Section.Content** *string*
 
-The full contents of the article’s section in HTML format.
+>> The full contents of the article’s section in HTML format.
 
-**KnowledgeArticle.Section.ContentAction** *array*
+>> **KnowledgeArticle.Section.ContentAction** *array*
 
-A list of problems and agencies relevant to the contents of the article’s section.
+>> A list of problems and agencies relevant to the contents of the article’s section.
 
-**KnowledgeArticle.Section.ContentAction.Agency** *string*
+>>> **KnowledgeArticle.Section.ContentAction.Agency** *string*
 
-The relevant city agency or department.
+>>> The relevant city agency or department.
 
-**KnowledgeArticle.Section.ContentAction.Name** *string*
+>>> **KnowledgeArticle.Section.ContentAction.Name** *string*
 
-The action that needs to be taken with the city agency.
+>>> The action that needs to be taken with the city agency.
 
-**KnowledgeArticle.Section.ContentAction.Problem** *string*
+>>> **KnowledgeArticle.Section.ContentAction.Problem** *string*
 
-A description of the issue.
+>>> A description of the issue.
+
+<div class="spacer-2"></div>
 
 **Response Examples**
 
@@ -735,9 +784,13 @@ A description of the issue.
 
 Service Requests are the 311 reports submitted by the general public. They can be created and issued through phone or online. A Service Request can be about any one of New York City’s categories such as Noise, Garbage, Education, Transportation, etc. Recent Service Requests can be seen here: [https://portal.311.nyc.gov/check-status/](https://portal.311.nyc.gov/check-status/). 
 
-### GET  /GetServiceRequest
+<div class="spacer-2"></div>
+
+### <b class="text-p-color">GET</b> /GetServiceRequest
 
 Get the latest information and status of a submitted 311 Service Request. All data that has no privacy concern are retrievable.
+
+<div class="spacer-2"></div>
 
 **Request Query Parameters**
 
@@ -746,6 +799,10 @@ Get the latest information and status of a submitted 311 Service Request. All da
 | field name | required | type | examples | description  |
 | --- | --- | --- | --- | --- |
 | srnumber | true | string | 311-10935582 | The unique identifier of a Service Request. A srnumber is generated for every submitted Service Request. |
+
+
+<div class="spacer-2"></div>
+
 
 **Request Examples**
 
@@ -791,6 +848,8 @@ Get the latest information and status of a submitted 311 Service Request. All da
     print(response.text)
     ```
     
+
+<div class="spacer-2"></div>
 
 **Response Schema**
 
@@ -848,13 +907,15 @@ The date and time of when the Service Request closed in the format `YYYY-MM-DD"T
 
 The location of interest reported by the Service Request.
 
-**Address.Borough** *string*
+> **Address.Borough** *string*
 
-The New York City borough of interest.
+> The New York City borough of interest.
 
-**Address.FullAddress** *string*
+> **Address.FullAddress** *string*
 
-The street address of interest.
+> The street address of interest.
+
+<div class="spacer-2"></div>
 
 **Response Examples**
 
@@ -879,9 +940,14 @@ The street address of interest.
 }
 ```
 
-### POST /GetServiceRequestList
+<div class="spacer-2"></div>
+
+
+### <b class="text-p-color">POST</b> /GetServiceRequestList
 
 Retrieve the latest information and statuses for multiple 311 Service Requests with one request.
+
+<div class="spacer-2"></div>
 
 **Request Body Parameters**
 
@@ -891,11 +957,15 @@ Retrieve the latest information and statuses for multiple 311 Service Requests w
 | --- | --- | --- | --- | --- |
 | SRNumbers | true | array | [”311-10935582”, “311-10935466”, “311-10935540”] | An array of multiple Service Request ids. |
 
+<div class="spacer-2"></div>
+
 ```json
 // pass into the request body
 
 { "SRNumbers": ["311-10935582", "311-10935466", "311-10935540"] }
 ```
+
+<div class="spacer-2"></div>
 
 **Request Examples**
 
@@ -946,6 +1016,8 @@ Retrieve the latest information and statuses for multiple 311 Service Requests w
     print(response.text)
     ```
     
+<div class="spacer-2"></div>
+
 
 **Response Schema**
 
@@ -955,65 +1027,67 @@ Retrieve the latest information and statuses for multiple 311 Service Requests w
 
 A list of Service Requests that match the SRNumbers.
 
-**SRResponses.SRNumber** *string*
+> **SRResponses.SRNumber** *string*
 
-The id of the Service Request.
+> The id of the Service Request.
 
-**SRResponses.Agency** *string*
+> **SRResponses.Agency** *string*
 
-The city agency relevant to the Service Request.
+> The city agency relevant to the Service Request.
 
-**SRResponses.Problem** *string*
+> **SRResponses.Problem** *string*
 
-The topic category of the Service Request.
+> The topic category of the Service Request.
 
-**SRResponses.ProblemDetails** *string*
+> **SRResponses.ProblemDetails** *string*
 
-The subcategory of the Service Request.
+> The subcategory of the Service Request.
 
-**SRResponses.AdditionalDetails** *string*
+> **SRResponses.AdditionalDetails** *string*
 
-A description of the Service Request.
+> A description of the Service Request.
 
-**SRResponses.Status** *string*
+> **SRResponses.Status** *string*
 
-A status code of the Service Request.
+> A status code of the Service Request.
 
-614110001: Open
+> 614110001: Open
 
-614110002: In Progress
+> 614110002: In Progress
 
-614110000: Cancel
+> 614110000: Cancel
 
-614110003: Closed
+> 614110003: Closed
 
-**SRResponses.DateTimeSubmitted** *string*
+> **SRResponses.DateTimeSubmitted** *string*
 
-The date and time of when the Service Request was created in the format `YYYY-MM-DD"T"HH:MM:SS`.
+> The date and time of when the Service Request was created in the format `YYYY-MM-DD"T"HH:MM:SS`.
 
-**SRResponses.SLARemainingDays** *string*
+> **SRResponses.SLARemainingDays** *string*
 
-The number of days left to resolve the open Service Request in accordance with NYC 311’s Service-Level Agreement.
+> The number of days left to resolve the open Service Request in accordance with NYC 311’s Service-Level Agreement.
 
-**SRResponses.ResolutionAction** *string*
+> **SRResponses.ResolutionAction** *string*
 
-A description of the issue resolution when the Service Request closed.
+> A description of the issue resolution when the Service Request closed.
 
-**SRResponses.ResolutionActionUpdatedDate** *string*
+> **SRResponses.ResolutionActionUpdatedDate** *string*
 
-The date and time of when the Service Request closed in the format `YYYY-MM-DD"T"HH:MM:SS`.
+> The date and time of when the Service Request closed in the format `YYYY-MM-DD"T"HH:MM:SS`.
 
-**SRResponses.Address** *object*
+> **SRResponses.Address** *object*
 
-The location of interest reported by the Service Request.
+> The location of interest reported by the Service Request.
 
-**SRResponses.Address.Borough** *string*
+>> **SRResponses.Address.Borough** *string*
 
-The New York City borough of interest.
+>> The New York City borough of interest.
 
-**SRResponses.Address.FullAddress** *string*
+>> **SRResponses.Address.FullAddress** *string*
 
-The street address of interest.
+>> The street address of interest.
+
+<div class="spacer-2"></div>
 
 **Response Example**
 
@@ -1071,13 +1145,21 @@ The street address of interest.
 }
 ```
 
+<div class="spacer-2"></div>
+
+
 ## <a name="statuses"></a> Statuses
 
 The statuses of New York City’s weather emergencies.
 
-### GET /Status/CodeBlue
+<div class="spacer-2"></div>
+
+### <b class="text-p-color">GET</b> /Status/CodeBlue
 
 Get the status of Code Blue — a weather emergency issued when outside temperature drops below 32 degrees Farenheight between 8 p.m. and 4 a.m. No one who is homeless and seeking shelter in New York City during Code Blue will be denied.
+
+<div class="spacer-2"></div>
+
 
 **Request Examples**
 
@@ -1123,6 +1205,7 @@ Get the status of Code Blue — a weather emergency issued when outside temperat
     print(response.text)
     ```
     
+<div class="spacer-2"></div>
 
 **Response Schema**
 
@@ -1131,6 +1214,8 @@ Get the status of Code Blue — a weather emergency issued when outside temperat
 **inEffect** *boolean*
 
 Indicates whether Code Blue is in effect.
+
+<div class="spacer-2"></div>
 
 **Response Examples**
 
@@ -1142,9 +1227,14 @@ Indicates whether Code Blue is in effect.
 { "inEffect": false }
 ```
 
-### GET /Status/FireHydrant
+<div class="spacer-2"></div>
+
+### <b class="text-p-color">GET</b> /Status/FireHydrant
 
 Get the status of a Fire Hydrant emergency.
+
+<div class="spacer-2"></div>
+
 
 **Request Examples**
 
@@ -1190,6 +1280,7 @@ Get the status of a Fire Hydrant emergency.
     print(response.text)
     ```
     
+<div class="spacer-2"></div>
 
 **Response Schema**
 
@@ -1198,6 +1289,8 @@ Get the status of a Fire Hydrant emergency.
 **inEffect** *boolean*
 
 Indicates whether a Fire Hydrant emergency is in effect.
+
+<div class="spacer-2"></div>
 
 **Response Examples**
 
@@ -1209,9 +1302,13 @@ Indicates whether a Fire Hydrant emergency is in effect.
 { "inEffect": false }
 ```
 
-### GET /Status/SnowOnSidewalk
+<div class="spacer-2"></div>
+
+### <b class="text-p-color">GET</b> /Status/SnowOnSidewalk
 
 Get the status of a Snow On Sidewalk emergency.
+
+<div class="spacer-2"></div>
 
 **Request Examples**
 
@@ -1257,6 +1354,7 @@ Get the status of a Snow On Sidewalk emergency.
     print(response.text)
     ```
     
+<div class="spacer-2"></div>
 
 **Response Schema**
 
@@ -1265,6 +1363,9 @@ Get the status of a Snow On Sidewalk emergency.
 **inEffect** *boolean*
 
 Indicates whether a Snow on Sidewalk emergency is in effect.
+
+<div class="spacer-2"></div>
+
 
 **Response Examples**
 
@@ -1276,9 +1377,13 @@ Indicates whether a Snow on Sidewalk emergency is in effect.
 { "inEffect": false }
 ```
 
-### GET /Status/SnowOnStreet
+<div class="spacer-2"></div>
+
+### <b class="text-p-color">GET</b> /Status/SnowOnStreet
 
 Get the status of a Snow On Street emergency.
+
+<div class="spacer-2"></div>
 
 **Request Examples**
 
@@ -1324,6 +1429,7 @@ Get the status of a Snow On Street emergency.
     print(response.text)
     ```
     
+<div class="spacer-2"></div>
 
 **Response Schema**
 
@@ -1332,6 +1438,8 @@ Get the status of a Snow On Street emergency.
 **inEffect** *boolean*
 
 Indicates whether a Snow on Street emergency is in effect.
+
+<div class="spacer-2"></div>
 
 **Response Examples**
 
@@ -1342,3 +1450,5 @@ Indicates whether a Snow on Street emergency is in effect.
 
 { "inEffect": false }
 ```
+
+<div class="spacer-2"></div>
