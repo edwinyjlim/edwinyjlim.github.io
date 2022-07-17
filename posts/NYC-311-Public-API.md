@@ -2,6 +2,25 @@
 title: API Documentation
 date: 2022-07-06
 description: I wrote documentation for New York City's 311 Public API.
+postContainerSize: md
+sidebar:
+  - {name: 'NYC 311', link: '#nyc-311'}
+  - {name: 'API Overview', link: '#api-overview'}
+  - {name: 'API Limits', link: '#api-limits', sublevel: 1}
+  - {name: 'API Version', link: '#api-version', sublevel: 1}
+  - {name: 'Base URL', link: '#base-url', sublevel: 1}
+  - {name: 'Requests & Methods', link: '#requests-and-methods', sublevel: 1}
+  - {name: 'Responses & Status Codes', link: '#responses-and-status-codes', sublevel: 1}
+  - {name: 'Authentication', link: '#authentication', sublevel: 1}
+  - {name: 'Quick Start Guide', link: '#quick-start-guide', sublevel: 1}
+  - {name: 'API Reference', link: '#api-reference'}
+  - {name: 'Calendar', link: '#calendar', sublevel: 1}
+  - {name: 'Categories', link: '#categories', sublevel: 1}
+  - {name: 'Content', link: '#content', sublevel: 1}
+  - {name: 'Service Requests', link: '#service-requests', sublevel: 1}
+  - {name: 'Statuses', link: '#statuses', sublevel: 1}
+
+
 tags:
   - api
   - coding examples
@@ -10,36 +29,17 @@ tags:
   - guides
 ---
 
-
-<div class="sidebar_nav">
-  <span>link</span>
-  <br><span>link</span>
-  <br><span>link</span>
-  <br><span>link</span>
-  <br><span>link</span>
-  <br><span>link</span>
-</div>
-
 # NYC 311 Public API Documentation
 
-*NOTE* New York City’s developer documentation  ([https://api-portal.nyc.gov](https://api-portal.nyc.gov)) currently suffers from several typos, blank sections, conflicting information, dead links, no data schemas, and no examples. Through trial and error, I experimented with the 311 Public API enough to fill in the gaps and offer improvements by building my own documentation.
+***A NOTE*** New York City’s developer documentation (https://api-portal.nyc.gov) is currently unusable. It suffers from several typos, blank sections, conflicting information, dead links, no data schemas, and no examples. So I built my own documentation. Through trial and error, I experimented with the 311 Public API enough to fill in the gaps and offer improvements. 
 
-## NYC 311
+<div class="divider"></div>
+
+## <a name="nyc-311"></a> NYC 311
 
 NYC 311 is central hub for New York City’s municipal services and non-emergency issues reported by the community.  It can be accessed by telephone at 3-1-1 and by web at [https://portal.311.nyc.gov/](https://portal.311.nyc.gov/).
 
-# Documentation
-
-- [Overview](https://www.notion.so/NYC-311-Public-API-Documentation-fa0ba0e73f4c4b098e46ad0ffabe95be)
-- [API Limits](https://www.notion.so/NYC-311-Public-API-Documentation-fa0ba0e73f4c4b098e46ad0ffabe95be)
-- [API Version](https://www.notion.so/NYC-311-Public-API-Documentation-fa0ba0e73f4c4b098e46ad0ffabe95be)
-- [Base URL](https://www.notion.so/NYC-311-Public-API-Documentation-fa0ba0e73f4c4b098e46ad0ffabe95be)
-- [Requests & Methods](https://www.notion.so/NYC-311-Public-API-Documentation-fa0ba0e73f4c4b098e46ad0ffabe95be)
-- [Responses & Status Codes](https://www.notion.so/NYC-311-Public-API-Documentation-fa0ba0e73f4c4b098e46ad0ffabe95be)
-- [Authentication](https://www.notion.so/NYC-311-Public-API-Documentation-fa0ba0e73f4c4b098e46ad0ffabe95be)
-- [Quick Start Guide](https://www.notion.so/NYC-311-Public-API-Documentation-fa0ba0e73f4c4b098e46ad0ffabe95be)
-
-## API Overview
+## <a name="api-overview"></a> API Overview
 
 The **NYC 311 Public API** is a RESTful web service published by the New York City government. This web service offers the latest updates on the city’s many 311 resources which include:
 
@@ -52,15 +52,15 @@ The **NYC 311 Public API** is a RESTful web service published by the New York Ci
 
 This documentation is aimed to help developers integrate this data into their applications. The **NYC 311 Public API** is available to the general public through online signup at [https://api-portal.nyc.gov](https://api-portal.nyc.gov). 
 
-## API Limits
+## <a name="api-limits"></a> API Limits
 
 All API is restricted to a daily rate limit for requests. If your application requires an increased API rate limit, you must apply for a special API key.
 
-## API Version
+## <a name="api-version"></a> API Version
 
 The **NYC 311 Public API** is currently on version 1.0. 
 
-## Base URL
+## <a name="base-url"></a> Base URL
 
 The **NYC 311 Public API** endpoints are accessed through the base URL.
 
@@ -68,11 +68,11 @@ The **NYC 311 Public API** endpoints are accessed through the base URL.
 https://api.nyc.gov/public/api
 ```
 
-## Requests & Methods
+## <a name="requests-and-methods"></a> Requests & Methods
 
 The **NYC 311 Public API** is built upon REST principles. **GET** and **POST** are currently the only request methods supported. Every request requires a valid API Key for authentication. 
 
-## Responses & Status Codes
+## <a name="responses-and-status-codes"></a> Responses & Status Codes
 
 All responses are returned in the **JSON** format. Each response will have an HTTP status code and a potential error message. 
 
@@ -122,7 +122,7 @@ All responses are returned in the **JSON** format. Each response will have an HT
 }
 ```
 
-## Authentication
+## <a name="authentication"></a> Authentication
 
 All requests must have a valid API Key ****in order to successfully call the **NYC 311 Public API**. Login to the **NYC API Developers Portal** at [https://api-portal.nyc.gov](https://api-portal.nyc.gov) to obtain an API Key.
 
@@ -135,7 +135,7 @@ GET https://api.nyc.gov/public/api/Status/CodeBlue HTTP/1.1
 Ocp-Apim-Subscription-Key: {API Key}
 ```
 
-## Quick Start Guide
+## <a name="quick-start-guide"></a> Quick Start Guide
 
 Get a quick start and connect to the **NYC 311 Public API** by completing the following steps.
 
@@ -214,17 +214,17 @@ Get a quick start and connect to the **NYC 311 Public API** by completing the fo
 
 ---
 
-## API Reference
+## <a name="api-reference"></a> API Reference
 
-- [Calendar](https://www.notion.so/NYC-311-Public-API-Documentation-fa0ba0e73f4c4b098e46ad0ffabe95be)
-- [Categories](https://www.notion.so/NYC-311-Public-API-Documentation-fa0ba0e73f4c4b098e46ad0ffabe95be)
-- [Content](https://www.notion.so/NYC-311-Public-API-Documentation-fa0ba0e73f4c4b098e46ad0ffabe95be)
-- [Service Requests](https://www.notion.so/NYC-311-Public-API-Documentation-fa0ba0e73f4c4b098e46ad0ffabe95be)
-- [Statuses](https://www.notion.so/NYC-311-Public-API-Documentation-fa0ba0e73f4c4b098e46ad0ffabe95be)
+- [Calendar](#calendar)
+- [Categories](#categories)
+- [Content](#content)
+- [Service Requests](#service-requests)
+- [Statuses](#statuses)
 
-## Calendar
+## <a name="calendar"></a> Calendar
 
-The daily updates regarding New York City Street Parking, Garbage Collection, and Public Schools.
+The daily calendar updates regarding New York City Street Parking, Garbage Collection, and Public Schools.
 
 ### GET /GetCalendar
 
@@ -376,7 +376,7 @@ The type of New York City service.
 }
 ```
 
-## Category
+## <a name="categories"></a> Categories
 
 The categories of the New York City 311 contents.
 
@@ -532,7 +532,7 @@ A list of subcategories nested under the category.
 ]
 ```
 
-## Content
+## <a name="content"></a> Content
 
 Find all content from knowledge articles published on New York City’s 311 website. 
 
@@ -732,7 +732,7 @@ A description of the issue.
 }
 ```
 
-## Service Request
+## <a name="service-requests"></a> Service Requests
 
 Service Requests are the 311 reports submitted by the general public. They can be created and issued through phone or online. A Service Request can be about any one of New York City’s categories such as Noise, Garbage, Education, Transportation, etc. Recent Service Requests can be seen here: [https://portal.311.nyc.gov/check-status/](https://portal.311.nyc.gov/check-status/). 
 
@@ -1072,9 +1072,9 @@ The street address of interest.
 }
 ```
 
-## Status
+## <a name="statuses"></a> Statuses
 
-The statuses of New York City’s weather emergencies and updates.
+The statuses of New York City’s weather emergencies.
 
 ### GET /Status/CodeBlue
 

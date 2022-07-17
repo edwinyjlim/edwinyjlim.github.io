@@ -3,20 +3,34 @@ layout: layouts/base.njk
 ---
 
 <div class="container">
-  <h1>{{ title }}</h1>
+  {# <h1>{{ title }}</h1> #}
 
-  {{ content | safe }}
-
-  <br><hr>
-  {% if not hideTagsList %}
-    <b>Tags: </b>
-    {% for tag in tags %}
-      {% if tag != 'post' %}
-        <a href="{{ '/tags/' | url }}{{ tag | slug }}">{{ tag }}</a>
-        {%- if not loop.last %}, {% endif %}
-      {% endif %}
+  <div class="post_sidebar_nav">
+    {% for section in sidebar %}
+    <div class="post_sidebar_nav_link" style="{% if section.sublevel %} margin-left: 1.25rem {% else %} font-weight: 600 {% endif %}">
+      <a href="{{section.link}}">{{section.name}}</a>
+    </div>
     {% endfor %}
-  {% endif %}
-  <br><br>
-  <a href="{{ '/' | url }}">&larr; Back home</a>
+  </div>
+
+
+  <div class="post_content">
+    {{ content | safe }}
+  </div>
+
+  <div class="post-tags">
+    <br><hr>
+    {% if not hideTagsList %}
+      <b>Tags: </b>
+      {% for tag in tags %}
+        {% if tag != 'post' %}
+          <a href="{{ '/tags/' | url }}{{ tag | slug }}">{{ tag }}</a>
+          {%- if not loop.last %}, {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    <br><br>
+    <a href="{{ '/' | url }}">&larr; Back home</a>
+  </div>
+
 </div>

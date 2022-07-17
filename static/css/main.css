@@ -96,7 +96,8 @@ hr {
   border-color: rgba(0,0,0,0.1);
 }
 .container,
-.container-sm {
+.container-sm,
+.container-md {
   margin: 0 auto;
   padding: 1rem;
   padding-bottom: 2.5rem;
@@ -105,6 +106,9 @@ hr {
 }
 .container-sm {
   max-width: 640px;
+}
+.container-md {
+  max-width: 768px;
 }
 .footer {
   display: flex;
@@ -284,6 +288,10 @@ body.dark .card__date {
   margin-bottom: 0.1rem;
   font-weight: 600;
 }
+.divider {
+  margin: 2rem 0;
+  border-bottom: 1px solid #d3d3d3;
+}
 .pagination {
   display: flex;
   margin: 1rem 0;
@@ -294,7 +302,11 @@ body.dark .card__date {
 .pagination__next {
   margin-left: auto;
 }
-.sidebar_nav {
-  position: absolute;
+.post_sidebar_nav {
+  position: fixed;
   left: 0px;
+  padding: 1rem;
+}
+.post_sidebar_nav_link {
+  margin: 0.25rem 0;
 }
