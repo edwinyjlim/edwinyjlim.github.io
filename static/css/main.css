@@ -117,10 +117,25 @@ body.dark .footer {
   background: #3d3d3d;
 }
 .hero {
-  margin: 5rem 0;
+  margin: 3rem 0 2.5rem 0;
 }
 .hero__description {
-  max-width: 80ch;
+  max-width: 100ch;
+}
+.hero__otherinfo {
+  max-width: 100ch;
+  margin-top: 1.5rem;
+}
+.hero__techstack {
+  display: flex;
+  margin-top: 1rem;
+}
+.hero__techstack_col {
+  margin-right: 4rem;
+}
+.hero__techstack_col span {
+  color: #7300e6;
+  font-weight: 300;
 }
 .navbar {
   padding: 1rem;

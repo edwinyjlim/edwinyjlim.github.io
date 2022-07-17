@@ -3,10 +3,8 @@ author: Me
 title: Markdown Syntax Guide
 date: 2021-03-16
 description: Sample article showcasing basic Markdown syntax and formatting for HTML elements.
+ignore: true
 tags:
- - markdown
- - css
- - html
 ---
 
 This article offers a sample of basic Markdown syntax that can be used in Eleventy content files, also it shows whether basic HTML elements are decorated with CSS in a Eleventy theme.

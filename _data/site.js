@@ -1,6 +1,6 @@
 module.exports = {
   meta: {
-    title: "Edwin Lim's Technical Writing Portfolio",
+    title: "Edwin Lim - Technical Writer",
     description: "This is my technical writing portfolio.",
     lang: "en",
     siteUrl: "https://example.com/",
@@ -14,7 +14,7 @@ module.exports = {
     authorEmail: "edwinyjlim@gmail.com"
   },
   hero: { // used in hero section of main page ie. index.html.njk
-    title: "Technical Writing",
+    title: "Hello.",
     description: "Welcome. I'm Edwin Lim and I built this site to host my portfolio of technical writing samples."
   }
 };

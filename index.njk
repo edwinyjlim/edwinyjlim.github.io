@@ -18,7 +18,7 @@ eleventyNavigation:
     <h1>
       {% if site.hero.title %}
         {% if pagination.pageNumber != 0 %}Page {{ pagination.pageNumber + 1 }} | {% endif %}
-        {{ site.hero.title }}
+        Hello.
       {% else %}
         {{ site.meta.title }}
       {% endif %}
@@ -35,27 +35,38 @@ eleventyNavigation:
     #}
 
     <p class="hero__description">
-      Welcome. I'm Edwin Lim and I built this site to host my portfolio of technical writing samples. 
+      I'm <b>Edwin Lim</b> and this is my portfolio of technical writing samples.
     </p>
-    <p class="hero__description">
-      The technology stack: 
-      <br>
-      <br><b>Eleventy</b> (Node.js) for static site generation.
-      <br><b>Markdown</b> and HTML for text.
-      <br><b>Nunjucks</b> for templating.
-      <br><b>Stylus</b> for CSS preprocessing.
-      <br><b>Git</b> for version control.
-      <br><b>Github Actions</b> for deployment.
-      <br><b>Github Pages</b> for hosting.
+    <p class="hero__otherinfo">
+      I built this site by working with the following tech stack: 
     </p>
+      
+    <div class="hero__techstack">
+      <div class="hero__techstack_col">
+        <span>Node.js</span> for development.
+        <br><span>Eleventy</span> for static site generation.
+        <br><span>Git</span> for version control.
+      </div>
+      <div class="hero__techstack_col">      
+        <span>Markdown</span> and <span>HTML</span> for text.
+        <br><span>Nunjucks</span> for templating.             
+        <br><span>Stylus</span> for CSS.
+      </div>
+      <div class="hero__techstack_col">      
+        <span>Github Actions</span> for deployment.
+        <br><span>Github Pages</span> for hosting.
+      </div>
+    </div>
 
   </div>
 
   <h2 class="section-title">
     Writing Samples
     {%- if pagination.pageNumber != 0 %} - Page {{ pagination.pageNumber + 1 }}{% endif %}
-  </h2>
+  </h2> 
+  
   {% include "components/postslist.njk" %}
+
   <div class="pagination">
       {% if pagination.previous %}
         <a href="{{ pagination.href.previous | url }}" class="pagination__prev">&larr; Prev Page</a>
