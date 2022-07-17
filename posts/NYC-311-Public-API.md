@@ -64,7 +64,7 @@ The **NYC 311 Public API** is currently on version 1.0.
 
 The **NYC 311 Public API** endpoints are accessed through the base URL.
 
-```
+```plaintext
 https://api.nyc.gov/public/api
 ```
 
@@ -140,30 +140,29 @@ Ocp-Apim-Subscription-Key: {API Key}
 Get a quick start and connect to the **NYC 311 Public API** by completing the following steps.
 
 1. Create a profile and login to the **NYC API Developers Portal** at [https://api-portal.nyc.gov](https://api-portal.nyc.gov).
-    - Screenshot with annotations in **red**.
-        
-        ![Untitled](NYC%20311%20Public%20API%20Documentation%20adbbc0d828994b13a17e12a868a1a7ab/Untitled.png)
-        
+    <details>
+      <summary> Screenshot with annotations in <b style="color: red">red</b>.
+      </summary>
+      <img src="/img/quickStartGuideStep1.png">
+    </details>      
+
 2. Click *Products* at the top of the page.
-    - Screenshot with annotations in **red**.
-        
-        ![Untitled](NYC%20311%20Public%20API%20Documentation%20adbbc0d828994b13a17e12a868a1a7ab/Untitled%201.png)
+    - Screenshot with annotations in <b style="color: red">red</b>.
+        ![Step 2](/img/quickStartGuideStep2.png)
         
 3. Select the *NYC 311 Public Developers* product.
-    - Screenshot with annotations in **red**.
-        
-        ![Untitled](NYC%20311%20Public%20API%20Documentation%20adbbc0d828994b13a17e12a868a1a7ab/Untitled%202.png)
+    - Screenshot with annotations in <b style="color: red">red</b>.    
+        ![Step 3](/img/quickStartGuideStep3.png)
         
 4. Type the name of your application and click the *Subscribe* button.
-    - Screenshot with annotations in **red**.
-        
-        ![Untitled](NYC%20311%20Public%20API%20Documentation%20adbbc0d828994b13a17e12a868a1a7ab/Untitled%203.png)
+    - Screenshot with annotations in <b style="color: red">red</b>. 
+        ![Step 4](/img/quickStartGuideStep4.png)
         
 5. Click *Profile* at the tope of the page and find the new API Key under the section *Subscriptions.*
     1. It may take a few minutes for the API Key to be generated.
-    - Screenshot with annotations in **red**.
+    - Screenshot with annotations in <b style="color: red">red</b>.
         
-        ![Untitled](NYC%20311%20Public%20API%20Documentation%20adbbc0d828994b13a17e12a868a1a7ab/Untitled%204.png)
+        ![Step 5](/img/QuickStartGuideStep5.png)
         
 6. Pass the API Key to the field `Ocp-Apim-Subscription-Key` in the header of the HTTP request.
 7. Make API requests! 

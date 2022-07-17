@@ -225,6 +225,14 @@ body.dark .navbar__hamburger > svg {
   border-radius: 0.25rem;
   font-weight: bold;
 }
+.post h2 {
+  border-bottom: 1px dashed;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+.post img {
+  border: 1px solid;
+}
 .section-title {
   font-size: 1rem;
   color: #5c5c5c;
