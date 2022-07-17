@@ -13,9 +13,11 @@
       #}
       </p>
       <p class="card__description">{{ post.data.description | safe }}</p>
-      <p class="card__subtitle">Tags:</p>
+      <p class="card__subtitle"></p>
       <div class="card__tags">
+        <b>tags:</b> 
         {% for tag in post.data.tags %}
+
           {% if tag != 'post' %}
             <a href="{{ '/tags/' | url }}{{ tag | slug }}">{{ tag }}</a>
             {%- if not loop.last %}, {% endif %}

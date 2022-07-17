@@ -16,6 +16,7 @@
     </div>
 
     <div class="navbar__links">
+      
       {% for entry in navPages %}
         <a class="navbar__link {% if entry.url == page.url %}navbar__link--active{% endif %}" href="{{ entry.url | url }}">
           {{ entry.title }}

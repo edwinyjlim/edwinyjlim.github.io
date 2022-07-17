@@ -10,6 +10,16 @@ tags:
   - guides
 ---
 
+
+<div class="sidebar_nav">
+  <span>link</span>
+  <br><span>link</span>
+  <br><span>link</span>
+  <br><span>link</span>
+  <br><span>link</span>
+  <br><span>link</span>
+</div>
+
 # NYC 311 Public API Documentation
 
 *NOTE* New York City’s developer documentation  ([https://api-portal.nyc.gov](https://api-portal.nyc.gov)) currently suffers from several typos, blank sections, conflicting information, dead links, no data schemas, and no examples. Through trial and error, I experimented with the 311 Public API enough to fill in the gaps and offer improvements by building my own documentation.
