@@ -255,6 +255,7 @@ body.dark .navbar__mobile-link:hover {
   background-color: transparent;
   border: none;
   border-radius: 0.25rem;
+  cursor: pointer;
 }
 .navbar__button:hover {
   background-color: #f2f2f2;
