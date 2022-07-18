@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | EYL&#39;s Portfolio</title>
+  <title>About | EYL - Portfolio</title>
   <meta name="description" content="All about me in this page">
 
   <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
@@ -17,7 +17,7 @@
   
 <nav class="navbar">
   <div class="navbar__inner">
-    <a class="navbar__logo" href="/">EYL&#39;s Portfolio</a>
+    <a class="navbar__logo" href="/">EYL - Portfolio</a>
 
     <div class="navbar__mobile-options">
       <div class="navbar__button dark-toggle" aria-label="toggle dark theme">
@@ -106,7 +106,7 @@ EYL
 </div>
 
   <footer class="footer">
-  &copy; 2022 - EYL&#39;s Portfolio
+  &copy; 2022 - EYL - Portfolio
 </footer>
 
   <script>
@@ -124,13 +124,22 @@ EYL
       })
     }
 
+/*
     if (
       localStorage.prefsDark === 'true' || 
       (
         window.matchMedia && 
         window.matchMedia('(prefers-color-scheme: dark)').matches && 
         localStorage.prefsDark !== 'false')
-      ) {
+      ) 
+*/
+
+    if( localStorage.prefsDark === 'true' )
+
+    {
+
+      console.log('11111111111111111111111111111111', localStorage, window.watchMedia)
+
       document.body.classList.add('dark')
       changeDarkToggleBtnIcon()
     }
@@ -157,5 +166,6 @@ EYL
       })
     })
   </script>
+
 </body>
 </html>
