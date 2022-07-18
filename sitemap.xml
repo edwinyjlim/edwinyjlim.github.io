@@ -52,16 +52,6 @@
   </url>
   
   <url>
-    <loc>https://example.com/tags/yaml/</loc>
-    <lastmod>2022-07-18</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/tags/openapi/</loc>
-    <lastmod>2022-07-18</lastmod>
-  </url>
-  
-  <url>
     <loc>https://example.com/tags/coding-examples/</loc>
     <lastmod>2022-07-18</lastmod>
   </url>
@@ -78,6 +68,16 @@
   
   <url>
     <loc>https://example.com/tags/guides/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/yaml/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/openapi/</loc>
     <lastmod>2022-07-18</lastmod>
   </url>
   
