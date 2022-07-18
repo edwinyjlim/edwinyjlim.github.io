@@ -11,6 +11,7 @@ eleventyNavigation:
 ---
 
 
+<div class="spacer-1"></div>
 
 <div class="about-profile-pic">
 
@@ -18,8 +19,16 @@ eleventyNavigation:
 
 </div>
 
-<div class="spacer-3"></div>
+<div class="spacer-2"></div>
 
 
-You can contact me at <span class="text-p-color">edwinyjlim@gmail.com</span>.
+I've worked in technology since 2012 as an Analyst, Software Engineer, and Business Architect. I live in Brooklyn and am currently looking for a role as a Technical Writer.
+
+I'm an illustrative communicator and a collaborative teammate.
+
+<div class="spacer-2"></div>
+
+You can contact me at <a>edwinyjlim@gmail.com</a>.
+
+Here is my [resume]().
 

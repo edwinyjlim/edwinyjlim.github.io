@@ -11,7 +11,7 @@ tags:
 
 # OpenAPI 3.1 Spec
 
-***A Note --*** I created an OpenAPI 3.1 specification for the **New York City 311 Public API**. This structured format enables the use of industry API documentation tools; such as, parsers, auto-generators, data validators, test suites, and more.
+***A Note --*** I created an OpenAPI 3.1 specification for the **New York City 311 Public API**. This structured format enables the use of industry API documentation platforms like Swagger and other tools; such as, parsers, auto-generators, data validators, test suites, and more.
 
 
 You access the YAML file directly [here]({{ '/static/other/NYC-311-Public-API-Edwin-Lim.yaml' | url }}).
@@ -1243,7 +1243,7 @@ paths:
 components:
   schemas: {}
   securitySchemes:
-    '{API Key}':
+    'API_Key':
       name: Ocp-Apim-Subscription-Key
       type: apiKey
       in: header

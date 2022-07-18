@@ -1219,7 +1219,7 @@ paths:
 components:
   schemas: {}
   securitySchemes:
-    '{API Key}':
+    'API_Key':
       name: Ocp-Apim-Subscription-Key
       type: apiKey
       in: header
