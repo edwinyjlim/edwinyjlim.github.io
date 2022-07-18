@@ -6,8 +6,8 @@
   <title>Tagged “coding examples” | Home</title>
   <meta name="description" content="This is my technical writing portfolio.">
 
-  <link rel="shortcut icon" href="/tech_writing_portfolio/static/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/tech_writing_portfolio/static/css/main.css" media="all">
+  <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/static/css/main.css" media="all">
   <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
 
 </head>
@@ -17,11 +17,11 @@
   
 <nav class="navbar">
   <div class="navbar__inner">
-    <a class="navbar__logo" href="/tech_writing_portfolio/">Home</a>
+    <a class="navbar__logo" href="/">Home</a>
 
     <div class="navbar__mobile-options">
       <div class="navbar__button dark-toggle" aria-label="toggle dark theme">
-        <img src="/tech_writing_portfolio/static/img/moon.svg" alt="">
+        <img src="/static/img/moon.svg" alt="">
       </div>
       <button class="navbar__button navbar__hamburger" aria-expanded="false" aria-label="toggle menu">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#333333">
@@ -39,7 +39,7 @@
 
         
 
-        <a class="navbar__link " href="/tech_writing_portfolio/pages/about/">
+        <a class="navbar__link " href="/pages/about/">
           About
         </a>
 
@@ -48,7 +48,7 @@
         
 
       <div class="navbar__button dark-toggle" aria-label="toggle dark theme">
-        <img src="/tech_writing_portfolio/static/img/moon.svg" alt="">
+        <img src="/static/img/moon.svg" alt="">
       </div>
 
     </div>
@@ -61,7 +61,7 @@
 
     
 
-    <a class="navbar__mobile-link " href="/tech_writing_portfolio/pages/about/">
+    <a class="navbar__mobile-link " href="/pages/about/">
       About
     </a>
 
@@ -83,10 +83,10 @@
   
 
   
-    <div class="card" onclick="location.href ='/tech_writing_portfolio/posts/NYC-311-Public-API/'">
+    <div class="card" onclick="location.href ='/posts/NYC-311-Public-API/'">
 
         <h3 class="card__title">
-          <a href="/tech_writing_portfolio/posts/NYC-311-Public-API/">API Documentation</a>
+          <a href="/posts/NYC-311-Public-API/">API Documentation</a>
         </h3>
         
         </p>
@@ -100,27 +100,27 @@
         
 
           
-            <a href="/tech_writing_portfolio/tags/api">api</a>
+            <a href="/tags/api">api</a>
           
         
 
           
-            <a href="/tech_writing_portfolio/tags/coding-examples">coding examples</a>
+            <a href="/tags/coding-examples">coding examples</a>
           
         
 
           
-            <a href="/tech_writing_portfolio/tags/data-schemas">data schemas</a>
+            <a href="/tags/data-schemas">data schemas</a>
           
         
 
           
-            <a href="/tech_writing_portfolio/tags/reference-docs">reference docs</a>
+            <a href="/tags/reference-docs">reference docs</a>
           
         
 
           
-            <a href="/tech_writing_portfolio/tags/guides">guides</a>
+            <a href="/tags/guides">guides</a>
           
         
       </div>
@@ -133,7 +133,7 @@
 </div>
 
 
-  <p>See <a href="/tech_writing_portfolio/tags/">all tags</a>.</p>
+  <p>See <a href="/tags/">all tags</a>.</p>
 </div>
 
 
@@ -149,9 +149,9 @@
     function changeDarkToggleBtnIcon () {
       darkToggleButtons.forEach(btn => {
         if (btn.querySelector('img').src.indexOf('/static/img/moon.svg') !== -1) {
-          btn.querySelector('img').src = "/tech_writing_portfolio/static/img/sun.svg"
+          btn.querySelector('img').src = "/static/img/sun.svg"
         } else {
-          btn.querySelector('img').src = "/tech_writing_portfolio/static/img/moon.svg"
+          btn.querySelector('img').src = "/static/img/moon.svg"
         }
       })
     }
