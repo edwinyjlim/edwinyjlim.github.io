@@ -1,6 +1,6 @@
 module.exports = {
   meta: {
-    title: "Portfolio",
+    title: "EYL's Portfolio",
     description: "This is my technical writing portfolio.",
     lang: "en",
     siteUrl: "https://example.com/",
