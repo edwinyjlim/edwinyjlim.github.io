@@ -30,5 +30,5 @@ I'm an illustrative communicator who likes to collaborate.
 
 You can contact me at <a>edwinyjlim@gmail.com</a>.
 
-Here is my [resume]().
+Here is my [resume]({{'/static/other/Edwin_Lim_Resume.pdf' | url}}).
 
