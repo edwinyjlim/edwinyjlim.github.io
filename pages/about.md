@@ -9,7 +9,6 @@ eleventyNavigation:
   weight: 2
 ---
 
-
 details
 
 contact info
