@@ -24,7 +24,7 @@ sidebar:
 tags:
   - api
   - coding examples
-  - data schema
+  - data schemas
   - reference docs
   - guides
 ---
@@ -75,6 +75,9 @@ The **NYC 311 Public API** is built upon REST principles. **GET** and **POST** a
 ## <a name="responses-and-status-codes"></a> Responses & Status Codes
 
 All responses are returned in the **JSON** format. Each response will have an HTTP status code and a potential error message. 
+
+<div class="spacer-2"></div>
+
 
 **200 OK —** Everything went smoothly. Success.
 
@@ -127,6 +130,9 @@ All responses are returned in the **JSON** format. Each response will have an HT
 All requests must have a valid API Key ****in order to successfully call the **NYC 311 Public API**. Login to the **NYC API Developers Portal** at [https://api-portal.nyc.gov](https://api-portal.nyc.gov) to obtain an API Key.
 
 Pass the API Key to the field `Ocp-Apim-Subscription-Key` in the HTTP request header.
+
+<div class="spacer-2"></div>
+
 
 **Request Header Example**
 
@@ -183,6 +189,9 @@ Get a quick start and connect to the **NYC 311 Public API** by completing the fo
 6. Pass the API Key to the field <code>Ocp-Apim-Subscription-Key</code> in the header of the HTTP request.
 
 7. Make API requests! 
+
+<div class="spacer-2"></div>
+
 
 
 **Request Examples**

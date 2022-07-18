@@ -12,17 +12,31 @@
   padding 1rem
   border-radius default_radius
   box-shadow:
-    0 0 0 1px rgba(0 0 0 0.06)\,
-    0 2px 2px rgba(0 0 0 0.04)\,
-    0 4px 4px rgba(0 0 0 0.05)\,
-    0 6px 6px rgba(0 0 0 0.06)
+    0 0 0 1px rgba(0 0 0 0.20)\,
+    0 2px 2px rgba(0 0 0 0.10)\,
+    0 4px 4px rgba(0 0 0 0.10)\,
+    0 6px 6px rgba(0 0 0 0.20)
+  transition all 0.5s ease
+  cursor pointer
+
+
+  &&:hover
+    margin-top 4px
+    /*
+    box-shadow:
+      0 0 0 1px rgba(115 0 230 0.20)\,
+      0 2px 2px rgba(0 0 0 0.10)\,
+      0 4px 4px rgba(0 0 0 0.10)\,
+      0 6px 6px rgba(115 0 230 0.20)
+    */
+
   
   body.dark &
     box-shadow:
-      0 0 0 1px rgba(255 255 255 0.06)\,
-      0 2px 2px rgba(255 255 255 0.04)\,
-      0 4px 4px rgba(255 255 255 0.05)\,
-      0 6px 6px rgba(255 255 255 0.06)
+      0 0 0 1px rgba(255 255 255 0.10)\,
+      0 2px 2px rgba(255 255 255 0.10)\,
+      0 4px 4px rgba(255 255 255 0.10)\,
+      0 6px 6px rgba(255 255 255 0.20)
 
 
   &__title
@@ -45,3 +59,14 @@
     margin-top 0.5rem
     margin-bottom 0.1rem
     font-weight 600
+  
+  &__tags
+    margin-top 20px
+    z-index 1
+    a
+      border 1px solid
+      border-radius 3px
+      padding 0px 4px
+      margin-right: 4px
+      font-size: 13px
+      background-color rgba(115,0,230,0.015)
