@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://example.com/tech_writing/posts/markdown-syntax/</loc>
+    <lastmod>2021-03-16</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/posts/Cookies/</loc>
+    <lastmod>2022-07-04</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/posts/Open-API-Spec/</loc>
+    <lastmod>2022-07-05</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/posts/NYC-311-Public-API/</loc>
+    <lastmod>2022-07-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/README/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/pages/about/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/tags/article/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/tags/privacy/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/tags/api/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/tags/coding-examples/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/tags/data-schemas/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/tags/reference-docs/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/tags/guides/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/tags/yaml/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/tags/openapi/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tech_writing/tags/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+</urlset>

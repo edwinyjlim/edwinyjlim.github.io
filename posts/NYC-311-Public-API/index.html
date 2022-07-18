@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation | Home</title>
+  <meta name="description" content="I wrote documentation for New York City&#39;s 311 Public API.">
+
+  <link rel="shortcut icon" href="/tech_writing/static/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/tech_writing/static/css/main.css" media="all">
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  
+<nav class="navbar">
+  <div class="navbar__inner">
+    <a class="navbar__logo" href="/tech_writing/">Home</a>
+
+    <div class="navbar__mobile-options">
+      <div class="navbar__button dark-toggle" aria-label="toggle dark theme">
+        <img src="/tech_writing/static/img/moon.svg" alt="">
+      </div>
+      <button class="navbar__button navbar__hamburger" aria-expanded="false" aria-label="toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#333333">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="navbar__links">
+      
+      
+
+        
+
+        
+
+        <a class="navbar__link " href="/tech_writing/pages/about/">
+          About
+        </a>
+
+        
+
+        
+
+      <div class="navbar__button dark-toggle" aria-label="toggle dark theme">
+        <img src="/tech_writing/static/img/moon.svg" alt="">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="navbar__mobile-links">
+    
+
+    
+
+    
+
+    <a class="navbar__mobile-link " href="/tech_writing/pages/about/">
+      About
+    </a>
+
+    
+
+    
+  </div>
+
+</nav>
+
+  
+<div class="container post">
+  
+
+  <div class="post_sidebar_nav">
+    
+    <div class="post_sidebar_nav_link" style=" font-weight: 600 ">
+      <a href="#nyc-311">NYC 311</a>
+    </div>
+    
+    <div class="post_sidebar_nav_link" style=" font-weight: 600 ">
+      <a href="#api-overview">API Overview</a>
+    </div>
+    
+    <div class="post_sidebar_nav_link" style=" margin-left: 1.25rem ">
+      <a href="#api-limits">API Limits</a>
+    </div>
+    
+    <div class="post_sidebar_nav_link" style=" margin-left: 1.25rem ">
+      <a href="#api-version">API Version</a>
+    </div>
+    
+    <div class="post_sidebar_nav_link" style=" margin-left: 1.25rem ">
+      <a href="#base-url">Base URL</a>
+    </div>
+    
+    <div class="post_sidebar_nav_link" style=" margin-left: 1.25rem ">
+      <a href="#requests-and-methods">Requests &amp; Methods</a>
+    </div>
+    
+    <div class="post_sidebar_nav_link" style=" margin-left: 1.25rem ">
+      <a href="#responses-and-status-codes">Responses &amp; Status Codes</a>
+    </div>
+    
+    <div class="post_sidebar_nav_link" style=" margin-left: 1.25rem ">
+      <a href="#authentication">Authentication</a>
+    </div>
+    
+    <div class="post_sidebar_nav_link" style=" margin-left: 1.25rem ">
+      <a href="#quick-start-guide">Quick Start Guide</a>
+    </div>
+    
+    <div class="post_sidebar_nav_link" style=" font-weight: 600 ">
+      <a href="#api-reference">API Reference</a>
+    </div>
+    
+    <div class="post_sidebar_nav_link" style=" margin-left: 1.25rem ">
+      <a href="#calendar">Calendar</a>
+    </div>
+    
+    <div class="post_sidebar_nav_link" style=" margin-left: 1.25rem ">
+      <a href="#categories">Categories</a>
+    </div>
+    
+    <div class="post_sidebar_nav_link" style=" margin-left: 1.25rem ">
+      <a href="#content">Content</a>
+    </div>
+    
+    <div class="post_sidebar_nav_link" style=" margin-left: 1.25rem ">
+      <a href="#service-requests">Service Requests</a>
+    </div>
+    
+    <div class="post_sidebar_nav_link" style=" margin-left: 1.25rem ">
+      <a href="#statuses">Statuses</a>
+    </div>
+    
+  </div>
+
+
+  <div class="post_content">
+    <h1>NYC 311 Public API Documentation</h1>
+<p><em><strong>A NOTE --</strong></em> New York City’s <a href="https://api-portal.nyc.gov">developer documentation</a> is currently unusable. It suffers from several typos, blank sections, conflicting information, dead links, no data schemas, and no examples. So I built my own. Through trial and error, I experimented with the 311 Public API enough to fill in the gaps and offer myimprovements.</p>
+<h2><a name="nyc-311"></a> NYC 311</h2>
+<p>NYC 311 is central hub for New York City’s municipal services and non-emergency issues reported by the community.  It can be accessed by telephone at 3-1-1 and by web at <a href="https://portal.311.nyc.gov/">https://portal.311.nyc.gov/</a>.</p>
+<h2><a name="api-overview"></a> API Overview</h2>
+<p>The <strong>NYC 311 Public API</strong> is a RESTful web service published by the New York City government. This web service offers the latest updates on the city’s many 311 resources which include:</p>
+<ul>
+<li>311 Service Requests</li>
+<li>Garbage Collection</li>
+<li>Parking</li>
+<li>Weather Alerts</li>
+<li>Knowledge Articles</li>
+<li>and more It can be  a special telephone number</li>
+</ul>
+<p>This documentation is aimed to help developers integrate this data into their applications. The <strong>NYC 311 Public API</strong> is available to the general public through online signup at <a href="https://api-portal.nyc.gov">https://api-portal.nyc.gov</a>.</p>
+<h2><a name="api-limits"></a> API Limits</h2>
+<p>All API is restricted to a daily rate limit for requests. If your application requires an increased API rate limit, you must apply for a special API key.</p>
+<h2><a name="api-version"></a> API Version</h2>
+<p>The <strong>NYC 311 Public API</strong> is currently on version 1.0.</p>
+<h2><a name="base-url"></a> Base URL</h2>
+<p>The <strong>NYC 311 Public API</strong> endpoints are accessed through the base URL.</p>
+<pre class="language-plaintext"><code class="language-plaintext">https://api.nyc.gov/public/api</code></pre>
+<h2><a name="requests-and-methods"></a> Requests &amp; Methods</h2>
+<p>The <strong>NYC 311 Public API</strong> is built upon REST principles. <strong>GET</strong> and <strong>POST</strong> are currently the only request methods supported. Every request requires a valid API Key for authentication.</p>
+<h2><a name="responses-and-status-codes"></a> Responses &amp; Status Codes</h2>
+<p>All responses are returned in the <strong>JSON</strong> format. Each response will have an HTTP status code and a potential error message.</p>
+<div class="spacer-2"></div>
+<p><strong>200 OK —</strong> Everything went smoothly. Success.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span> <span class="token property">"data"</span><span class="token operator">:</span> <span class="token string">"..."</span> <span class="token punctuation">}</span></code></pre>
+<p><strong>400 Bad Service Request —</strong> The request and its parameters may be missing or incorrectly formatted.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"Error"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"Code"</span><span class="token operator">:</span> <span class="token string">"BadRequest"</span><span class="token punctuation">,</span><br>    <span class="token property">"Message"</span><span class="token operator">:</span> <span class="token string">"Invalid Parameter: from date is greater than to date"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p><strong>401 Access Denied —</strong> The provided API Key are not authorized to make the request.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">"statusCode"</span><span class="token operator">:</span> <span class="token number">401</span><span class="token punctuation">,</span><br>    <span class="token property">"message"</span><span class="token operator">:</span> <span class="token string">"Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."</span><br><span class="token punctuation">}</span></code></pre>
+<p><strong>404 Not Found —</strong> The requested endpoint is not recognized.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">"statusCode"</span><span class="token operator">:</span> <span class="token number">404</span><span class="token punctuation">,</span><br>    <span class="token property">"message"</span><span class="token operator">:</span> <span class="token string">"Resource not found"</span><br><span class="token punctuation">}</span></code></pre>
+<p><strong>500 Internal Service Error —</strong> The server cannot process the request.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"Error"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"Code"</span><span class="token operator">:</span> <span class="token string">"InternalServerError"</span><span class="token punctuation">,</span><br>    <span class="token property">"Message"</span><span class="token operator">:</span> <span class="token string">"No MediaTypeFormatter is available to read an object of type 'Object' from content with media type 'application/octet-stream'."</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2><a name="authentication"></a> Authentication</h2>
+<p>All requests must have a valid API Key ****in order to successfully call the <strong>NYC 311 Public API</strong>. Login to the <strong>NYC API Developers Portal</strong> at <a href="https://api-portal.nyc.gov">https://api-portal.nyc.gov</a> to obtain an API Key.</p>
+<p>Pass the API Key to the field <code>Ocp-Apim-Subscription-Key</code> in the HTTP request header.</p>
+<div class="spacer-2"></div>
+<p><strong>Request Header Example</strong></p>
+<pre class="language-bash"><code class="language-bash">GET https://api.nyc.gov/public/api/Status/CodeBlue HTTP/1.1<br>Ocp-Apim-Subscription-Key: <span class="token punctuation">{</span>API Key<span class="token punctuation">}</span></code></pre>
+<h2><a name="quick-start-guide"></a> Quick Start Guide</h2>
+<p>Get a quick start and connect to the <strong>NYC 311 Public API</strong> by completing the following steps.</p>
+<ol>
+<li>
+<p>Create a profile and login to the <strong>NYC API Developers Portal</strong> at <a href="https://api-portal.nyc.gov">https://api-portal.nyc.gov</a>.</p>
+ <details open>
+   <summary> Screenshot with annotations in <b style="color: red">red</b>.
+   </summary>
+   <img src="/tech_writing/img/quickStartGuideStep1.png" style="width: 80%">
+ </details>      
+</li>
+<li>
+<p>Click <em>Products</em> at the top of the page.</p>
+ <details >
+   <summary> Screenshot with annotations in <b style="color: red">red</b>.
+   </summary>
+   <img src="/tech_writing/img/quickStartGuideStep2.png" style="width: 80%">
+ </details>  
+</li>
+<li>
+<p>Select the <em>NYC 311 Public Developers</em> product.</p>
+ <details >
+   <summary> Screenshot with annotations in <b style="color: red">red</b>.
+   </summary>
+   <img src="/tech_writing/img/quickStartGuideStep3.png" style="width: 80%">
+ </details>  
+</li>
+<li>
+<p>Type the name of your application and click the <em>Subscribe</em> button.</p>
+ <details>
+   <summary> Screenshot with annotations in <b style="color: red">red</b>.
+   </summary>
+   <img src="/tech_writing/img/quickStartGuideStep4.png" style="width: 80%">
+ </details>
+</li>
+<li>
+<p>Click <em>Profile</em> at the tope of the page and find the new API Key under the section <em>Subscriptions.</em> It may take a few minutes for the API Key to be generated.</p>
+ <details >
+   <summary> Screenshot with annotations in <b style="color: red">red</b>.
+   </summary>
+   <img src="/tech_writing/img/quickStartGuideStep1.png" style="width: 80%">
+ </details>  
+</li>
+<li>
+<p>Pass the API Key to the field <code>Ocp-Apim-Subscription-Key</code> in the header of the HTTP request.</p>
+</li>
+<li>
+<p>Make API requests!</p>
+</li>
+</ol>
+<div class="spacer-2"></div>
+<p><strong>Request Examples</strong></p>
+<hr>
+<ul>
+<li>
+<p><strong>cURL</strong></p>
+<pre class="language-bash"><code class="language-bash">  <span class="token function">curl</span> --location --request GET <span class="token string">"https://api.nyc.gov/public/api/Status/CodeBlue"</span> --header <span class="token string">"Ocp-Apim-Subscription-Key: {API Key}"</span></code></pre>
+</li>
+<li>
+<p><strong>Javascript - Node.js</strong></p>
+<pre class="language-jsx"><code class="language-jsx">  <span class="token keyword">var</span> request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><br>    <span class="token string-property property">'method'</span><span class="token operator">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span><br>    <span class="token string-property property">'url'</span><span class="token operator">:</span> <span class="token string">'https://api.nyc.gov/public/api/Status/CodeBlue'</span><span class="token punctuation">,</span><br>    <span class="token string-property property">'headers'</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">;</span><br>  <span class="token function">request</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li>
+<p><strong>Python - Requests</strong></p>
+<pre class="language-jsx"><code class="language-jsx">  <span class="token keyword">import</span> requests<br>  <br>  url <span class="token operator">=</span> <span class="token string">"https://api.nyc.gov/public/api/Status/CodeBlue"</span><br>  <br>  payload<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span><br>  headers <span class="token operator">=</span> <span class="token punctuation">{</span><br>    <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br>  <span class="token punctuation">}</span><br>  <br>  response <span class="token operator">=</span> requests<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>payload<span class="token punctuation">)</span><br>  <br>  <span class="token function">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<hr>
+<h2><a name="api-reference"></a> API Reference</h2>
+<ul>
+<li><a href="#calendar">Calendar</a></li>
+<li><a href="#categories">Categories</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#service-requests">Service Requests</a></li>
+<li><a href="#statuses">Statuses</a></li>
+</ul>
+<h2><a name="calendar"></a> Calendar</h2>
+<p>The daily calendar updates regarding New York City Street Parking, Garbage Collection, and Public Schools.</p>
+<div class="spacer-2"></div>
+<h3><b class="text-p-color">GET</b> /GetCalendar</h3>
+<p>Get the daily status for Street Parking, Garbage Collection and Public Schools in New York City for a specified date range.</p>
+<div class="spacer-2"></div>
+<p><strong>Request Query Parameters</strong></p>
+<hr>
+<table>
+<thead>
+<tr>
+<th><strong>field name</strong></th>
+<th><strong>required</strong></th>
+<th><strong>type</strong></th>
+<th><strong>examples</strong></th>
+<th><strong>description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fromdate</td>
+<td>true</td>
+<td>string</td>
+<td>07/04/2022</td>
+<td>The date of the first day in the specified date range. Use the format MM/DD/YYYY.</td>
+</tr>
+<tr>
+<td>todate</td>
+<td>true</td>
+<td>string</td>
+<td>07/05/2022</td>
+<td>The date of the final day in the specified date range. Use the format MM/DD/YYYY.</td>
+</tr>
+</tbody>
+</table>
+<p>*NOTE: A single request can only return a maximum of 90 days worth of data. The date range is also inclusive.</p>
+<div class="spacer-2"></div>
+<p><strong>Request Examples</strong></p>
+<hr>
+<ul>
+<li>
+<p>cURL</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> --location --request GET <span class="token string">"https://api.nyc.gov/public/api/GetCalendar?fromdate=07/04/2022&amp;todate=07/05/2022"</span> --header <span class="token string">"Ocp-Apim-Subscription-Key: {API Key}"</span></code></pre>
+</li>
+<li>
+<p>Javascript - Node.js</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">var</span> request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'method'</span><span class="token operator">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'url'</span><span class="token operator">:</span> <span class="token string">'https://api.nyc.gov/public/api/GetCalendar?fromdate=07/04/2022&amp;todate=07/05/2022'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'headers'</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token function">request</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li>
+<p>Python - Requests</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> requests<br><br>url <span class="token operator">=</span> <span class="token string">"https://api.nyc.gov/public/api/GetCalendar?fromdate=07/04/2022&amp;todate=07/05/2022"</span><br><br>payload<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span><br>headers <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br><span class="token punctuation">}</span><br><br>response <span class="token operator">=</span> requests<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>payload<span class="token punctuation">)</span><br><br><span class="token function">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<div class="spacer-2"></div>
+<p><strong>Response Schema</strong></p>
+<hr>
+<p><strong>days</strong> <em>array</em></p>
+<p>Detailed list of calendar day objects.</p>
+<blockquote>
+<p><strong>days.today_id</strong> <em>integer</em></p>
+</blockquote>
+<blockquote>
+<p>The id of a calendar day in YYYYMMDD format. E.g. 07/04/2022 is 20220704</p>
+</blockquote>
+<blockquote>
+<p><strong>days.items</strong> <em>array</em></p>
+</blockquote>
+<blockquote>
+<p>A list of New York City service updates for a particular calendar day.</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>days.items.exceptionName</strong> <em>string</em></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>The title of the update issued by a New York City service.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>days.items.details</strong> <em>string</em></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>The description of the update issued by a New York City service.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>days.items.status</strong> <em>string</em></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>The status of the update issued by a New York City service. E.g. “IN EFFECT” “SUSPENDED” “NOT IN SESSION”</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>days.items.type</strong> <em>string</em></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>The type of New York City service.</p>
+</blockquote>
+</blockquote>
+<div class="spacer-2"></div>
+<p><strong>Response Examples</strong></p>
+<hr>
+<pre class="language-json"><code class="language-json"><span class="token comment">//  ...?fromdate=07/04/2022&amp;todate=07/05/2022</span><br><span class="token comment">// 200 OK Response </span><br><br><span class="token punctuation">{</span><br>    <span class="token property">"days"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"today_id"</span><span class="token operator">:</span> <span class="token string">"20220704"</span><span class="token punctuation">,</span><br>            <span class="token property">"items"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"exceptionName"</span><span class="token operator">:</span> <span class="token string">"Independence Day 2022"</span><span class="token punctuation">,</span><br>                    <span class="token property">"details"</span><span class="token operator">:</span> <span class="token string">"Alternate side parking and meters are suspended for Independence Day."</span><span class="token punctuation">,</span><br>                    <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"SUSPENDED"</span><span class="token punctuation">,</span><br>                    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Alternate Side Parking"</span><br>                <span class="token punctuation">}</span><span class="token punctuation">,</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"exceptionName"</span><span class="token operator">:</span> <span class="token string">"Independence Day 2022"</span><span class="token punctuation">,</span><br>                    <span class="token property">"details"</span><span class="token operator">:</span> <span class="token string">"Trash, recycling, and compost collections are suspended for Independence Day."</span><span class="token punctuation">,</span><br>                    <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"SUSPENDED"</span><span class="token punctuation">,</span><br>                    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Collections"</span><br>                <span class="token punctuation">}</span><span class="token punctuation">,</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"exceptionName"</span><span class="token operator">:</span> <span class="token string">"Summer 2022"</span><span class="token punctuation">,</span><br>                    <span class="token property">"details"</span><span class="token operator">:</span> <span class="token string">"Public schools are not in session."</span><span class="token punctuation">,</span><br>                    <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"NOT IN SESSION"</span><span class="token punctuation">,</span><br>                    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Schools"</span><br>                <span class="token punctuation">}</span><br>            <span class="token punctuation">]</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"today_id"</span><span class="token operator">:</span> <span class="token string">"20220705"</span><span class="token punctuation">,</span><br>            <span class="token property">"items"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"exceptionName"</span><span class="token operator">:</span> <span class="token string">"ASP Reform Ending 7/5 - 7/8/22"</span><span class="token punctuation">,</span><br>                    <span class="token property">"details"</span><span class="token operator">:</span> <span class="token string">"Alternate side parking and meters are in effect. ASP Reform Rules ended as of July 5. Follow the rules as posted on ASP signs."</span><span class="token punctuation">,</span><br>                    <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"IN EFFECT"</span><span class="token punctuation">,</span><br>                    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Alternate Side Parking"</span><br>                <span class="token punctuation">}</span><span class="token punctuation">,</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"details"</span><span class="token operator">:</span> <span class="token string">"Trash and recycling collections are on schedule. Compost collections in participating neighborhoods are also on schedule."</span><span class="token punctuation">,</span><br>                    <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"ON SCHEDULE"</span><span class="token punctuation">,</span><br>                    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Collections"</span><br>                <span class="token punctuation">}</span><span class="token punctuation">,</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"exceptionName"</span><span class="token operator">:</span> <span class="token string">"Summer 2022"</span><span class="token punctuation">,</span><br>                    <span class="token property">"details"</span><span class="token operator">:</span> <span class="token string">"Public schools are not in session."</span><span class="token punctuation">,</span><br>                    <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"NOT IN SESSION"</span><span class="token punctuation">,</span><br>                    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Schools"</span><br>                <span class="token punctuation">}</span><br>            <span class="token punctuation">]</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+<h2><a name="categories"></a> Categories</h2>
+<p>The categories of the New York City 311 contents.</p>
+<div class="spacer-2"></div>
+<h3><b class="text-p-color">GET</b> /GetCategory</h3>
+<p>Get all the categories and subcategories from the New York City 311 platform.</p>
+<div class="spacer-2"></div>
+<p><strong>Request Examples</strong></p>
+<hr>
+<ul>
+<li>
+<p>cURL</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> --location --request GET <span class="token string">"https://api.nyc.gov/public/api/GetCategory"</span> --header <span class="token string">"Ocp-Apim-Subscription-Key: {API Key}"</span></code></pre>
+</li>
+<li>
+<p>Javascript - Node.js</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">var</span> request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'method'</span><span class="token operator">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'url'</span><span class="token operator">:</span> <span class="token string">'https://api.nyc.gov/public/api/GetCategory'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'headers'</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token function">request</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li>
+<p>Python - Requests</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> requests<br><br>url <span class="token operator">=</span> <span class="token string">"https://api.nyc.gov/public/api/GetCategory"</span><br><br>payload<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span><br>headers <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br><span class="token punctuation">}</span><br><br>response <span class="token operator">=</span> requests<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>payload<span class="token punctuation">)</span><br><br><span class="token function">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<div class="spacer-2"></div>
+<p><strong>Response Schema</strong></p>
+<hr>
+<p><strong>Name</strong> <em>string</em></p>
+<p>The name of the NYC 311 category.</p>
+<p><strong>CategoryURL</strong> <em>string</em></p>
+<p>A URL to the category’s 311 webpage.</p>
+<p><strong>CategoryId</strong> <em>string</em></p>
+<p>The id of the category.</p>
+<p><strong>SubCategory</strong> <em>array</em></p>
+<p>A list of subcategories nested under the category.</p>
+<blockquote>
+<p><strong>SubCategory.Name</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>The name of the category.</p>
+</blockquote>
+<blockquote>
+<p><strong>SubCategory.CategoryURL</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>A URL to the category’s 311 webpage.</p>
+</blockquote>
+<blockquote>
+<p><strong>SubCategory.Id</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>The id of the category.</p>
+</blockquote>
+<blockquote>
+<p><strong>SubCategory.ParentCategoryId</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>The id of the parent category.</p>
+</blockquote>
+<blockquote>
+<p><strong>SubCategory.SubCategory</strong> <em>array</em></p>
+</blockquote>
+<blockquote>
+<p>A list of subcategories nested under the category.</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>SubCategory.SubCategory.SubCategory…</strong> <em>can continue nesting</em></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<div class="spacer-2"></div>
+<p><strong>Response Examples</strong></p>
+<hr>
+<pre class="language-json"><code class="language-json"><span class="token comment">// 200 OK Response</span><br><br><span class="token punctuation">[</span><br>    <span class="token comment">//...</span><br>    <span class="token punctuation">{</span><br>        <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Courts &amp; Law"</span><span class="token punctuation">,</span><br>        <span class="token property">"CategoryURL"</span><span class="token operator">:</span> <span class="token string">"https://portal.311.nyc.gov/category/?id=311-3"</span><span class="token punctuation">,</span><br>        <span class="token property">"CategoryId"</span><span class="token operator">:</span> <span class="token string">"311-3"</span><span class="token punctuation">,</span><br>        <span class="token property">"SubCategory"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>            <span class="token punctuation">{</span><br>                <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Courts &amp; Law"</span><span class="token punctuation">,</span><br>                <span class="token property">"CategoryURL"</span><span class="token operator">:</span> <span class="token string">"https://portal.311.nyc.gov/category/?id=311-35"</span><span class="token punctuation">,</span><br>                <span class="token property">"CategoryId"</span><span class="token operator">:</span> <span class="token string">"311-35"</span><span class="token punctuation">,</span><br>                <span class="token property">"ParentCategoryId"</span><span class="token operator">:</span> <span class="token string">"311-3"</span><br>            <span class="token punctuation">}</span><span class="token punctuation">,</span><br>            <span class="token punctuation">{</span><br>                <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Jails &amp; Inmates"</span><span class="token punctuation">,</span><br>                <span class="token property">"CategoryURL"</span><span class="token operator">:</span> <span class="token string">"https://portal.311.nyc.gov/category/?id=311-34"</span><span class="token punctuation">,</span><br>                <span class="token property">"CategoryId"</span><span class="token operator">:</span> <span class="token string">"311-34"</span><span class="token punctuation">,</span><br>                <span class="token property">"ParentCategoryId"</span><span class="token operator">:</span> <span class="token string">"311-3"</span><span class="token punctuation">,</span><br>                <span class="token property">"SubCategory"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                    <span class="token punctuation">{</span><br>                        <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Arrests"</span><span class="token punctuation">,</span><br>                        <span class="token property">"CategoryURL"</span><span class="token operator">:</span> <span class="token string">"https://portal.311.nyc.gov/category/?id=311-97"</span><span class="token punctuation">,</span><br>                        <span class="token property">"CategoryId"</span><span class="token operator">:</span> <span class="token string">"311-97"</span><span class="token punctuation">,</span><br>                        <span class="token property">"ParentCategoryId"</span><span class="token operator">:</span> <span class="token string">"311-34"</span><span class="token punctuation">,</span><br>                        <span class="token property">"SubCategory"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>                    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>                    <span class="token punctuation">{</span><br>                        <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Inmates"</span><span class="token punctuation">,</span><br>                        <span class="token property">"CategoryURL"</span><span class="token operator">:</span> <span class="token string">"https://portal.311.nyc.gov/category/?id=311-98"</span><span class="token punctuation">,</span><br>                        <span class="token property">"CategoryId"</span><span class="token operator">:</span> <span class="token string">"311-98"</span><span class="token punctuation">,</span><br>                        <span class="token property">"ParentCategoryId"</span><span class="token operator">:</span> <span class="token string">"311-34"</span><span class="token punctuation">,</span><br>                        <span class="token property">"SubCategory"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>                    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>                    <span class="token punctuation">{</span><br>                        <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Jails &amp; Detention Centers"</span><span class="token punctuation">,</span><br>                        <span class="token property">"CategoryURL"</span><span class="token operator">:</span> <span class="token string">"https://portal.311.nyc.gov/category/?id=311-99"</span><span class="token punctuation">,</span><br>                        <span class="token property">"CategoryId"</span><span class="token operator">:</span> <span class="token string">"311-99"</span><span class="token punctuation">,</span><br>                        <span class="token property">"ParentCategoryId"</span><span class="token operator">:</span> <span class="token string">"311-34"</span><span class="token punctuation">,</span><br>                        <span class="token property">"SubCategory"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>                    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>                    <span class="token punctuation">{</span><br>                        <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Probation &amp; Parole"</span><span class="token punctuation">,</span><br>                        <span class="token property">"CategoryURL"</span><span class="token operator">:</span> <span class="token string">"https://portal.311.nyc.gov/category/?id=311-100"</span><span class="token punctuation">,</span><br>                        <span class="token property">"CategoryId"</span><span class="token operator">:</span> <span class="token string">"311-100"</span><span class="token punctuation">,</span><br>                        <span class="token property">"ParentCategoryId"</span><span class="token operator">:</span> <span class="token string">"311-34"</span><span class="token punctuation">,</span><br>                        <span class="token property">"SubCategory"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>                    <span class="token punctuation">}</span><br>                <span class="token punctuation">]</span><br>            <span class="token punctuation">}</span><br>        <span class="token punctuation">]</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>   <span class="token comment">//...</span><br><span class="token punctuation">]</span></code></pre>
+<h2><a name="content"></a> Content</h2>
+<p>Find all content from knowledge articles published on New York City’s 311 website.</p>
+<div class="spacer-2"></div>
+<h3><b class="text-p-color">GET</b> /GetContent</h3>
+<p>Get all relevant content from New York City’s 311 website using text search.</p>
+<div class="spacer-2"></div>
+<p><strong>Request Query Parameters</strong></p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>field name</th>
+<th>required</th>
+<th>type</th>
+<th>examples</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SearchText</td>
+<td>true</td>
+<td>string</td>
+<td>“composting”, “special education”, “parks and recreation”</td>
+<td>The relevant text you want to search for. No numbers or special characters are permitted.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Request Examples</strong></p>
+<hr>
+<ul>
+<li>
+<p>cURL</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> --location --request GET <span class="token string">"https://api.nyc.gov/public/api/GetContent?SearchText=composting"</span> --header <span class="token string">"Ocp-Apim-Subscription-Key: {API Key}"</span></code></pre>
+</li>
+<li>
+<p>Javascript - Node.js</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">var</span> request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'method'</span><span class="token operator">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'url'</span><span class="token operator">:</span> <span class="token string">'https://api.nyc.gov/public/api/GetContent?SearchText=composting'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'headers'</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token function">request</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li>
+<p>Python - Requests</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> requests<br><br>url <span class="token operator">=</span> <span class="token string">"https://api.nyc.gov/public/api/GetContent?SearchText=composting"</span><br><br>payload<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span><br>headers <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br><span class="token punctuation">}</span><br><br>response <span class="token operator">=</span> requests<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>payload<span class="token punctuation">)</span><br><br><span class="token function">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<p><strong>Response Schema</strong></p>
+<hr>
+<p><strong>KnowledgeArticle</strong> array</p>
+<p>List of published 311 articles.</p>
+<blockquote>
+<p><strong>KnowledgeArticle.ArticlePublicNumber</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>The unique identifier for the published article.</p>
+</blockquote>
+<blockquote>
+<p><strong>KnowledgeArticle.Title</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>The title of the article.</p>
+</blockquote>
+<blockquote>
+<p><strong>KnowledgeArticle.Description</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>A short description of the article.</p>
+</blockquote>
+<blockquote>
+<p><strong>KnowledgeArticle.TotalTitle</strong> <em>integer</em></p>
+</blockquote>
+<blockquote>
+<p>The calculated score of how well the SearchText matched the article’s title.</p>
+</blockquote>
+<blockquote>
+<p><strong>KnowledgeArticle.TotalContent</strong> <em>integer</em></p>
+</blockquote>
+<blockquote>
+<p>The calculated score of how well the SearchText matched the article’s contents.</p>
+</blockquote>
+<blockquote>
+<p><strong>KnowledgeArticle.TotalWeight</strong> <em>integer</em></p>
+</blockquote>
+<blockquote>
+<p>The total weighted score calculated by summing together KnowledgeArticle.TotalTitle and KnowledgeArticle.TotalContent.</p>
+</blockquote>
+<blockquote>
+<p><strong>KnowledgeArticle.Section</strong> <em>array</em></p>
+</blockquote>
+<blockquote>
+<p>A list of the sections that separate the contents within the article.</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>KnowledgeArticle.Section.Name</strong> <em>string</em></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>The title of the article’s section.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>KnowledgeArticle.Section.Content</strong> <em>string</em></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>The full contents of the article’s section in HTML format.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>KnowledgeArticle.Section.ContentAction</strong> <em>array</em></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>A list of problems and agencies relevant to the contents of the article’s section.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>KnowledgeArticle.Section.ContentAction.Agency</strong> <em>string</em></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>The relevant city agency or department.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>KnowledgeArticle.Section.ContentAction.Name</strong> <em>string</em></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>The action that needs to be taken with the city agency.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>KnowledgeArticle.Section.ContentAction.Problem</strong> <em>string</em></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>A description of the issue.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<div class="spacer-2"></div>
+<p><strong>Response Examples</strong></p>
+<hr>
+<pre class="language-json"><code class="language-json"><span class="token comment">// ...?SearchText=composting</span><br><span class="token comment">// 200 OK Response</span><br><br><span class="token punctuation">{</span><br>    <span class="token property">"KnowledgeArticle"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"ArticlePublicNumber"</span><span class="token operator">:</span> <span class="token string">"KA-02030"</span><span class="token punctuation">,</span><br>            <span class="token property">"Title"</span><span class="token operator">:</span> <span class="token string">"Curbside Composting"</span><span class="token punctuation">,</span><br>            <span class="token property">"Description"</span><span class="token operator">:</span> <span class="token string">"Learn about compost collection in New York City."</span><span class="token punctuation">,</span><br>            <span class="token property">"TotalTitle"</span><span class="token operator">:</span> <span class="token number">330</span><span class="token punctuation">,</span><br>            <span class="token property">"TotalContent"</span><span class="token operator">:</span> <span class="token number">106</span><span class="token punctuation">,</span><br>            <span class="token property">"TotalWeight"</span><span class="token operator">:</span> <span class="token number">436</span><span class="token punctuation">,</span><br>            <span class="token property">"Section"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"NYC Today Collections Status Banner"</span><span class="token punctuation">,</span><br>                    <span class="token property">"Content"</span><span class="token operator">:</span> <span class="token string">"&lt;style type='text/css'>.divTable {\n                display: table;\n                width: 100%;\n                margin-bottom: 15px;\n}\n.divTableRow {\n                display: table-row;\n}\n.divTableCell3, .divTableHead {\n                border: 0px solid #cccccc;\n                display: table-cell;\n                padding: 6px 12px;\n                background-color: #FFF200;\n                color: black;\n                font-weight: bold;\n                text-align: center;\n}\n.divTableCell4, .divTableHead {\n                border: 1px solid #cccccc;\n                display: table-cell;\n                padding: 12px 12px;\n                background-color: #eeeeee;\n}\n.divTableBody {\n                display: table-row-group;\n}&lt;/style>&lt;div class='divTable'>&lt;div class='divTableBody'>&lt;div class='divTableRow'>&lt;div class='divTableCell3'>Today&amp;#39;s&amp;nbsp;Status&lt;/div>&lt;/div>&lt;div class='divTableRow'>&lt;div class='divTableCell4'>&lt;p>&lt;u>&lt;a href='https://portal.311.nyc.gov/#feedsContainer'>Find out if collections are on schedule, delayed, or suspended.&lt;/a>&lt;/u>&lt;/p>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;div style='background:#eee;border:1px solid #ccc;padding:5px 10px; margin-bottom:15px;'>&lt;p>&lt;em>&lt;strong>Need something else?&lt;/strong>&lt;/em>&lt;/p>&lt;ul>&lt;li>&lt;a class='kalink' target='_blank' href='https://portal.311.nyc.gov/article/?kanumber=KA-01788'>Missed Trash, Recycling, or Compost Collection&lt;/a>&lt;/li>&lt;/ul>&lt;/div>&lt;p>The Curbside Composting program collects food scraps, food-soiled paper, and yard waste and turns&amp;nbsp;it into compost or renewable energy.&lt;/p>&lt;p>This service is voluntary and available for residential buildings in selected neighborhoods. If you&amp;rsquo;re interested in receiving composting, you must&amp;nbsp;&lt;a class='externallink' target='_blank' href='https://www.nyc.gov/curbsidecomposting'>sign up&lt;/a>, even if you received the service in the past.&lt;/p>&lt;p>Curbside Composting will expand to more areas on a rolling basis based on the number of signups in each neighborhood.&lt;/p>&lt;p>Until service begins in your area, you can:&lt;/p>&lt;ul>&lt;li>Put your food scraps, food-soiled paper, and yard waste in the trash following normal &lt;a class='kalink' target='_blank' href='https://portal.311.nyc.gov/article/?kanumber=KA-02086'>residential trash rules&lt;/a>&lt;/li>&lt;li>Take food waste to a&amp;nbsp;&lt;a class='externallink' target='_blank' href='https://www1.nyc.gov/assets/dsny/site/services/food-scraps-and-yard-waste-page/nyc-food-scrap-drop-off-locations'>food scrap drop-off site&lt;/a>&lt;/li>&lt;li>&lt;a class='externallink' target='_blank' href='https://www.makecompost.nyc/makecompost'>Compost at home&lt;/a>&lt;/li>&lt;/ul>"</span><span class="token punctuation">,</span><br>                    <span class="token property">"ContentAction"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>                <span class="token punctuation">}</span><span class="token punctuation">,</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Sign Up for Curbside Composting"</span><span class="token punctuation">,</span><br>                    <span class="token property">"Content"</span><span class="token operator">:</span> <span class="token string">"&lt;p>You can sign up for Curbside Composting online or by phone.&lt;/p>&lt;p>After you sign up, the Department of Sanitation (DSNY) will let you know if you&amp;#39;re in an eligible neighborhood and notify you when service will start in your area.&lt;/p>&lt;p>If you don&amp;#39;t live in an area where Curbside Composting is offered yet, DSNY will let you know if the service will expand to your area. DSNY wants to hear from everyone interested in Curbside Composting as it helps to make the case to expand this service to more neighborhoods.&lt;/p>&lt;p>&lt;strong>Online&lt;/strong>&lt;/p>&lt;p>&lt;a class='externallink' target='_blank' href='https://dsny.force.com/curbsidecomposting/s/'>Sign up for Curbside Composting.&lt;/a>&lt;/p>&lt;p>&lt;strong>By Phone&lt;/strong>&lt;/p>&lt;p>Call 311 for assistance.&lt;/p>&lt;p>&amp;nbsp;&lt;/p>&lt;p>&amp;nbsp;&lt;/p>&lt;p>[62074 24/7]&lt;/p>"</span><span class="token punctuation">,</span><br>                    <span class="token property">"ContentAction"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>                <span class="token punctuation">}</span><span class="token punctuation">,</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Collection Schedule"</span><span class="token punctuation">,</span><br>                    <span class="token property">"Content"</span><span class="token operator">:</span> <span class="token string">"&lt;p>The Curbside Composting collection schedule for your home is based on your address.&lt;/p>&lt;p>Suspensions may occur for a City holiday or during a snowstorm.&lt;/p>&lt;p>&lt;a class='externallink' target='_blank' href='https://on.nyc.gov/CompostingDay'>Look up the curbside composting schedule for a specific address.&lt;/a>&lt;/p>&lt;p>&lt;strong>Set Out Rules&lt;/strong>&lt;/p>&lt;p>Place your brown bin curbside&amp;nbsp;between 4 PM and midnight the evening before your scheduled pickup.&lt;/p>&lt;ul>&lt;li>If your pickup is before 4 PM, you must retrieve your brown bin by 9 PM.&lt;/li>&lt;li>If your pickup is after 4 PM, you must retrieve your brown bin&amp;nbsp;by 9 AM the following morning.&lt;/li>&lt;/ul>"</span><span class="token punctuation">,</span><br>                    <span class="token property">"ContentAction"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>                <span class="token punctuation">}</span><span class="token punctuation">,</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Service Areas"</span><span class="token punctuation">,</span><br>                    <span class="token property">"Content"</span><span class="token operator">:</span> <span class="token string">"&lt;p>Currently, only Community Boards that had previously received Curbside Composting are eligible for service, but not all of these neighborhoods will receive it immediately. Service will resume based on the number of signups and the density of the neighborhood.&lt;/p>&lt;p>If you don&amp;rsquo;t live in a participating Community Board, you can still sign up to express interest in receiving the service in the future.&lt;/p>&lt;p>You can look up the Community Board for your address on the &lt;a class='kalink' target='_blank' href='https://portal.311.nyc.gov/article/?kanumber=KA-01785'>Community Boards&lt;/a> page.&lt;/p>&lt;p>&lt;strong>Current Service Areas&lt;/strong>&lt;/p>&lt;ul>&lt;li>Bronx Community Board 8 (Kingsbridge, Riverdale)&lt;/li>&lt;li>Brooklyn Community Board 1 (Williamsburg, Greenpoint)&lt;/li>&lt;li>Brooklyn Community Board 2 (DUMBO, Downtown Brooklyn, Fort Greene, Clinton Hill, Brooklyn Heights)&lt;/li>&lt;li>Brooklyn Community Board 6 (Red Hook, Gowanus, Carroll Gardens, Park Slope)&lt;/li>&lt;li>Brooklyn Community Board 7 (Sunset Park, Industry City, Windsor Terrace, South Slope)&lt;/li>&lt;li>Manhattan Community Board 6 (Stuy Town &amp;amp; Peter Cooper Village, Midtown East, Murray Hill)&lt;/li>&lt;li>Manhattan Community Board 7 (Manhattan Valley, Upper West Side, Lincoln Square)&lt;/li>&lt;/ul>&lt;p>If your Community Board is receiving the service and you signed up, DSNY will confirm your&amp;nbsp;information and notify you of the date that Curbside Composting will begin for your building.&lt;/p>"</span><span class="token punctuation">,</span><br>                    <span class="token property">"ContentAction"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>                <span class="token punctuation">}</span><span class="token punctuation">,</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Compost Bins"</span><span class="token punctuation">,</span><br>                    <span class="token property">"Content"</span><span class="token operator">:</span> <span class="token string">"&lt;p>Participants in Curbside Composting can only use brown outdoor composting bins issued by the Department of Sanitation (DSNY) to throw out their food and yard waste.&lt;/p>&lt;p>If you do not already have a brown bin, you can request one when you sign up, and it will be delivered before your service begins. Participating buildings will be given brown bins before service starts if they no longer have a bin.&lt;/p>&lt;p>&lt;strong>Bin Liners and Bags&lt;/strong>&lt;/p>&lt;p>You must use bin liners or bags in your brown bin.&lt;/p>&lt;p>To line the brown bin, you can use a:&lt;/p>&lt;ul>&lt;li>Clear, untinted plastic liner or bag&lt;/li>&lt;li>Paper bag&lt;/li>&lt;li>Certified compostable liner with BPI-USCC logo (Biodegradable Products Institute - US Composting Council)&lt;/li>&lt;/ul>&lt;p>You cannot use small plastic shopping bags or black plastic bags to line the bin.&lt;/p>&lt;p>To line your indoor kitchen container, you can use:&lt;/p>&lt;ul>&lt;li>Small shopping bags&lt;/li>&lt;li>Newspaper&lt;/li>&lt;li>Brown paper bags&lt;/li>&lt;li>Small certified compostable bags&lt;/li>&lt;/ul>&lt;p>&lt;strong>Replacement Bins&lt;/strong>&lt;/p>&lt;p>If your brown bin is lost or has been damaged or stolen, you can request a new one.&lt;/p>&lt;p>If you qualify to receive a replacement bin, you may need to pick it up from one of the bin distribution locations. The pick-up location will be provided after your request has been reviewed.&lt;/p>&lt;p>&lt;a class='externallink' target='_blank' href='https://dsny.force.com/curbsidecomposting/s/bin-request'>Request a replacement brown bin.&lt;/a>&lt;/p>"</span><span class="token punctuation">,</span><br>                    <span class="token property">"ContentAction"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>                <span class="token punctuation">}</span><span class="token punctuation">,</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Accepted Items"</span><span class="token punctuation">,</span><br>                    <span class="token property">"Content"</span><span class="token operator">:</span> <span class="token string">"&lt;p>&lt;span style='font-size:20px;'>&lt;strong>Items Accepted&lt;/strong>&lt;/span>&lt;/p>&lt;p>&lt;strong>Food Waste&lt;/strong>&lt;/p>&lt;p>You can put food waste in your brown compost bin, including:&lt;/p>&lt;ul>&lt;li>Food scraps&lt;/li>&lt;li>Coffee grounds and tea bags&lt;/li>&lt;li>Shells (seafood, nut, and egg)&lt;/li>&lt;li>Bones&lt;/li>&lt;li>Spoiled and expired food&lt;/li>&lt;li>Food-soiled paper (napkins, towels, uncoated plates, bags, trays, or boxes)&lt;/li>&lt;/ul>&lt;p>&lt;strong>Yard Waste&lt;/strong>&lt;/p>&lt;p>You can put small amounts of yard waste in your brown composting bin, such as:&lt;/p>&lt;ul>&lt;li>Leaves&lt;/li>&lt;li>Grass&lt;/li>&lt;li>Small twigs and branches&lt;/li>&lt;li>House plants and flowers&lt;/li>&lt;li>Hay bales&lt;/li>&lt;/ul>&lt;p>If your yard waste can&amp;rsquo;t fit in the bin with the lid closed, or to save room in the bin for food waste, you can:&lt;/p>&lt;ul>&lt;li>Put it in a rigid unlined container labeled &amp;ldquo;Yard Waste&amp;rdquo;&lt;/li>&lt;li>Put it in a paper lawn and leaf bag&lt;/li>&lt;li>Tie it into bundles 2 feet by 4 feet or smaller&lt;/li>&lt;/ul>&lt;p>Do not use plastic bags. Yard waste set out in plastic bags will be collected as trash.&lt;/p>&lt;p>&lt;span style='font-size:20px;'>&lt;strong>Items Not Accepted&lt;/strong>&lt;/span>&lt;/p>&lt;p>You can&amp;rsquo;t put any of the following items in the brown organics bin:&lt;/p>&lt;ul>&lt;li>&lt;strong>Trash&lt;/strong>, including&lt;ul>&lt;li>Diapers and hygienic products&lt;/li>&lt;li>Animal waste or kitty litter&lt;/li>&lt;li>Wrappers and packaging&lt;/li>&lt;li>Foam products&lt;/li>&lt;/ul>&lt;/li>&lt;li>&lt;strong>Recyclables&lt;/strong>, including&lt;ul>&lt;li>Metal&lt;/li>&lt;li>Glass&lt;/li>&lt;li>Plastic&lt;/li>&lt;li>Beverage cartons&lt;/li>&lt;li>Clean recyclable paper&lt;/li>&lt;li>Cardboard&lt;/li>&lt;/ul>&lt;/li>&lt;/ul>"</span><span class="token punctuation">,</span><br>                    <span class="token property">"ContentAction"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>                <span class="token punctuation">}</span><span class="token punctuation">,</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Resources"</span><span class="token punctuation">,</span><br>                    <span class="token property">"Content"</span><span class="token operator">:</span> <span class="token string">"&lt;p>You can get bin decals, brochures, guides, and stickers showing what items to put in your brown bin.&lt;/p>&lt;p>&lt;a class='externallink' target='_blank' href='https://nyc.gov/sanitationmaterials'>Download or request Department of Sanitation materials.&lt;/a>&lt;/p>"</span><span class="token punctuation">,</span><br>                    <span class="token property">"ContentAction"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>                <span class="token punctuation">}</span><span class="token punctuation">,</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Sanitation Holidays"</span><span class="token punctuation">,</span><br>                    <span class="token property">"Content"</span><span class="token operator">:</span> <span class="token string">"&lt;p>In general, there is no collection on sanitation holidays, but that is subject to change. You can check back near the date of the holiday to confirm the collection schedule.&lt;/p>&lt;p>Usually:&lt;/p>&lt;ul>&lt;li>If a holiday occurs on your trash or compost collection day, put your items out after 4 PM that day for collection beginning the next day.&lt;/li>&lt;li>If a holiday occurs on your recycling collection day, put your items out after 4 PM the day before your next scheduled recycling collection day.&lt;/li>&lt;/ul>&lt;p>&lt;strong>2022&amp;nbsp;Sanitation Holidays&lt;/strong>&lt;/p>&lt;style type='text/css'>.tg  {border-collapse:collapse;border-spacing:0;margin-bottom: 20px;border-style:solid;border-width:1px;border-color:black;}\n.tg td{padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}\n.tg th{padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}\n  \n.tg .header{background-color:#4472C4;font-size:14px;font-weight:bold;text-align: center;color:#ffffff;border-color:#000000;vertical-align:top; border-width:1px;}\n.tg .cell1{background-color:#B4C6E7;font-size:14px;color:#000000;text-align: center; border-color:#000000}\n.tg .cell2{background-color:#D9E2F3;font-size:14px;color:#000000;text-align: center; border-color:#000000}&lt;/style>&lt;table class='tg'>&lt;tbody>&lt;tr>&lt;th class='header'>Date&lt;/th>&lt;th class='header'>Holiday&lt;/th>&lt;/tr>&lt;tr>&lt;td class='cell1'>January 1 (Saturday)&lt;/td>&lt;td class='cell1'>New Year&amp;#39;s Day&lt;/td>&lt;/tr>&lt;tr>&lt;td class='cell2'>January 17 (Monday)&lt;/td>&lt;td class='cell2'>Martin Luther King Jr. Day&lt;/td>&lt;/tr>&lt;tr>&lt;td class='cell1'>February 12 (Saturday)&lt;/td>&lt;td class='cell1'>Lincoln&amp;#39;s Birthday&lt;/td>&lt;/tr>&lt;tr>&lt;td class='cell2'>February 21 (Monday)&lt;/td>&lt;td class='cell2'>Washington&amp;#39;s Birthday (Presidents&amp;#39; Day)&lt;/td>&lt;/tr>&lt;tr>&lt;td class='cell1'>May 30 (Monday)&lt;/td>&lt;td class='cell1'>Memorial Day&lt;/td>&lt;/tr>&lt;tr>&lt;td class='cell2'>June 20 (Monday)&lt;/td>&lt;td class='cell2'>Juneteenth (Observed)&lt;/td>&lt;/tr>&lt;tr>&lt;td class='cell1'>July 4 (Monday)&lt;/td>&lt;td class='cell1'>Independence Day&lt;/td>&lt;/tr>&lt;tr>&lt;td class='cell2'>September 5 (Monday)&lt;/td>&lt;td class='cell2'>Labor Day&lt;/td>&lt;/tr>&lt;tr>&lt;td class='cell1'>October 10 (Monday)&lt;/td>&lt;td class='cell1'>Italian Heritage Day/Indigenous Peoples&amp;#39; Day&lt;/td>&lt;/tr>&lt;tr>&lt;td class='cell2'>November 8 (Tuesday)&lt;/td>&lt;td class='cell2'>Election Day&lt;/td>&lt;/tr>&lt;tr>&lt;td class='cell1'>November 11 (Friday)&lt;/td>&lt;td class='cell1'>Veterans Day&lt;/td>&lt;/tr>&lt;tr>&lt;td class='cell2'>November 24 (Thursday)&lt;/td>&lt;td class='cell2'>Thanksgiving&lt;/td>&lt;/tr>&lt;tr>&lt;td class='cell1'>December 26 (Monday)&lt;/td>&lt;td class='cell1'>Christmas (Observed)&lt;/td>&lt;/tr>&lt;/tbody>&lt;/table>"</span><span class="token punctuation">,</span><br>                    <span class="token property">"ContentAction"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>                <span class="token punctuation">}</span><br>            <span class="token punctuation">]</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"ArticlePublicNumber"</span><span class="token operator">:</span> <span class="token string">"KA-02031"</span><span class="token punctuation">,</span><br>            <span class="token property">"Title"</span><span class="token operator">:</span> <span class="token string">"Composting Site Permit"</span><span class="token punctuation">,</span><br>            <span class="token property">"Description"</span><span class="token operator">:</span> <span class="token string">"Apply for a permit for a landscaper or tree service company to dispose of yard waste and buy compost."</span><span class="token punctuation">,</span><br>            <span class="token property">"TotalTitle"</span><span class="token operator">:</span> <span class="token number">330</span><span class="token punctuation">,</span><br>            <span class="token property">"TotalContent"</span><span class="token operator">:</span> <span class="token number">102</span><span class="token punctuation">,</span><br>            <span class="token property">"TotalWeight"</span><span class="token operator">:</span> <span class="token number">432</span><span class="token punctuation">,</span><br>            <span class="token property">"Section"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token punctuation">{</span><br>                    <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"Composting Site Permit"</span><span class="token punctuation">,</span><br>                    <span class="token property">"Content"</span><span class="token operator">:</span> <span class="token string">"&lt;p>If you are a landscaper or tree service company, you can apply for a Composting Site Permit to discard yard waste and purchase finished compost. The permit is a plastic, wallet-sized card that states the account and permit numbers.&lt;/p>&lt;p>The Department of Sanitation operates a yard waste composting site at the Staten Island Compost Facility. This site receives leaf and yard waste from landscapers registered with the Composting Site Permit Program.&lt;/p>&lt;p>&lt;a class='externallink' target='_blank' href='https://www1.nyc.gov/assets/dsny/site/services/food-scraps-and-yard-waste-page/commercial-landscapers'>Learn more about getting a Composting Site Permit.&lt;/a>&lt;/p>"</span><span class="token punctuation">,</span><br>                    <span class="token property">"ContentAction"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>                <span class="token punctuation">}</span><br>            <span class="token punctuation">]</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token comment">//... </span><br>    <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+<h2><a name="service-requests"></a> Service Requests</h2>
+<p>Service Requests are the 311 reports submitted by the general public. They can be created and issued through phone or online. A Service Request can be about any one of New York City’s categories such as Noise, Garbage, Education, Transportation, etc. Recent Service Requests can be seen here: <a href="https://portal.311.nyc.gov/check-status/">https://portal.311.nyc.gov/check-status/</a>.</p>
+<div class="spacer-2"></div>
+<h3><b class="text-p-color">GET</b> /GetServiceRequest</h3>
+<p>Get the latest information and status of a submitted 311 Service Request. All data that has no privacy concern are retrievable.</p>
+<div class="spacer-2"></div>
+<p><strong>Request Query Parameters</strong></p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>field name</th>
+<th>required</th>
+<th>type</th>
+<th>examples</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>srnumber</td>
+<td>true</td>
+<td>string</td>
+<td>311-10935582</td>
+<td>The unique identifier of a Service Request. A srnumber is generated for every submitted Service Request.</td>
+</tr>
+</tbody>
+</table>
+<div class="spacer-2"></div>
+<p><strong>Request Examples</strong></p>
+<hr>
+<ul>
+<li>
+<p>cURL</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> --location --request GET <span class="token string">"https://api.nyc.gov/public/api/GetServiceRequestList?srnumber=311-10935582"</span> --header <span class="token string">"Ocp-Apim-Subscription-Key: {API Key}"</span></code></pre>
+</li>
+<li>
+<p>Javascript - Node.js</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">var</span> request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'method'</span><span class="token operator">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'url'</span><span class="token operator">:</span> <span class="token string">'https://api.nyc.gov/public/api/GetServiceRequestList?srnumber=311-10935582'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'headers'</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token function">request</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li>
+<p>Python - Requests</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> requests<br><br>url <span class="token operator">=</span> <span class="token string">"https://api.nyc.gov/public/api/GetServiceRequestList?srnumber=311-10935582"</span><br><br>payload<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span><br>headers <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br><span class="token punctuation">}</span><br><br>response <span class="token operator">=</span> requests<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>payload<span class="token punctuation">)</span><br><br><span class="token function">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<div class="spacer-2"></div>
+<p><strong>Response Schema</strong></p>
+<hr>
+<p><strong>SRNumber</strong> <em>string</em></p>
+<p>The id of the Service Request.</p>
+<p><strong>Agency</strong> <em>string</em></p>
+<p>The city agency relevant to the Service Request.</p>
+<p><strong>Problem</strong> <em>string</em></p>
+<p>The issue category of the Service Request.</p>
+<p><strong>ProblemDetails</strong> <em>string</em></p>
+<p>The issue subcategory of the Service Request.</p>
+<p><strong>AdditionalDetails</strong> <em>string</em></p>
+<p>A description of the Service Request.</p>
+<p><strong>Status</strong> <em>string</em></p>
+<p>A status code of the Service Request.</p>
+<p>614110001: Open</p>
+<p>614110002: In Progress</p>
+<p>614110000: Cancel</p>
+<p>614110003: Closed</p>
+<p><strong>DateTimeSubmitted</strong> <em>string</em></p>
+<p>The date and time of when the Service Request was created in the format <code>YYYY-MM-DD&quot;T&quot;HH:MM:SS</code>.</p>
+<p><strong>SLARemainingDays</strong> <em>string</em></p>
+<p>The number of days left to resolve the open Service Request in accordance with NYC 311’s Service-Level Agreement.</p>
+<p><strong>ResolutionAction</strong> <em>string</em></p>
+<p>A description of the issue resolution when the Service Request closed.</p>
+<p><strong>ResolutionActionUpdatedDate</strong> <em>string</em></p>
+<p>The date and time of when the Service Request closed in the format <code>YYYY-MM-DD&quot;T&quot;HH:MM:SS</code>.</p>
+<p><strong>Address</strong> <em>object</em></p>
+<p>The location of interest reported by the Service Request.</p>
+<blockquote>
+<p><strong>Address.Borough</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>The New York City borough of interest.</p>
+</blockquote>
+<blockquote>
+<p><strong>Address.FullAddress</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>The street address of interest.</p>
+</blockquote>
+<div class="spacer-2"></div>
+<p><strong>Response Examples</strong></p>
+<hr>
+<pre class="language-json"><code class="language-json"><span class="token comment">// ...?srnumber=311-10935582</span><br><span class="token comment">// 200 OK Response</span><br><br><span class="token punctuation">{</span><br>    <span class="token property">"SRNumber"</span><span class="token operator">:</span> <span class="token string">"311-10935582"</span><span class="token punctuation">,</span><br>    <span class="token property">"Agency"</span><span class="token operator">:</span> <span class="token string">"Department of Housing Preservation and Development"</span><span class="token punctuation">,</span><br>    <span class="token property">"Problem"</span><span class="token operator">:</span> <span class="token string">"Unsanitary Condition"</span><span class="token punctuation">,</span><br>    <span class="token property">"ProblemDetails"</span><span class="token operator">:</span> <span class="token string">"Garbage/Recycling Storage"</span><span class="token punctuation">,</span><br>    <span class="token property">"AdditionalDetails"</span><span class="token operator">:</span> <span class="token string">"Missing or Inadequate Cans/Lid"</span><span class="token punctuation">,</span><br>    <span class="token property">"Status"</span><span class="token operator">:</span> <span class="token string">"614110002"</span><span class="token punctuation">,</span><br>    <span class="token property">"DateTimeSubmitted"</span><span class="token operator">:</span> <span class="token string">"2022-07-07T14:50:17"</span><span class="token punctuation">,</span><br>    <span class="token property">"Address"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token property">"Borough"</span><span class="token operator">:</span> <span class="token string">"MANHATTAN"</span><span class="token punctuation">,</span><br>        <span class="token property">"FullAddress"</span><span class="token operator">:</span> <span class="token string">"435 FORT WASHINGTON AVENUE, MANHATTAN (NEW YORK), NY, 10033"</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<div class="spacer-2"></div>
+<h3><b class="text-p-color">POST</b> /GetServiceRequestList</h3>
+<p>Retrieve the latest information and statuses for multiple 311 Service Requests with one request.</p>
+<div class="spacer-2"></div>
+<p><strong>Request Body Parameters</strong></p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>field name</th>
+<th>required</th>
+<th>type</th>
+<th>examples</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SRNumbers</td>
+<td>true</td>
+<td>array</td>
+<td>[”311-10935582”, “311-10935466”, “311-10935540”]</td>
+<td>An array of multiple Service Request ids.</td>
+</tr>
+</tbody>
+</table>
+<div class="spacer-2"></div>
+<pre class="language-json"><code class="language-json"><span class="token comment">// pass into the request body</span><br><br><span class="token punctuation">{</span> <span class="token property">"SRNumbers"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"311-10935582"</span><span class="token punctuation">,</span> <span class="token string">"311-10935466"</span><span class="token punctuation">,</span> <span class="token string">"311-10935540"</span><span class="token punctuation">]</span> <span class="token punctuation">}</span></code></pre>
+<div class="spacer-2"></div>
+<p><strong>Request Examples</strong></p>
+<hr>
+<ul>
+<li>
+<p>cURL</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> --location --request POST <span class="token string">"https://api.nyc.gov/public/api/GetServiceRequestList"</span> --header <span class="token string">"Ocp-Apim-Subscription-Key: {API Key}"</span> --header <span class="token string">"Content-Type: application/json"</span> --data-raw <span class="token string">"{SRNumbers: ['311-10935582', '311-10935466', '311-1093554df0']}"</span></code></pre>
+</li>
+<li>
+<p>Javascript - Node.js</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">var</span> request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'method'</span><span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'url'</span><span class="token operator">:</span> <span class="token string">'https://api.nyc.gov/public/api/GetServiceRequestList'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'headers'</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'body'</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>		<span class="token string-property property">'SRNumbers'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'311-10935582'</span><span class="token punctuation">,</span> <span class="token string">'311-10935466'</span><span class="token punctuation">,</span> <span class="token string">'311-1093554df0'</span><span class="token punctuation">]</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token function">request</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li>
+<p>Python - Requests</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> requests<br><br>url <span class="token operator">=</span> <span class="token string">"https://api.nyc.gov/public/api/GetServiceRequestList"</span><br><br>payload<span class="token operator">=</span><span class="token punctuation">{</span><br>  <span class="token string-property property">'SRNumbers'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'311-10935582'</span><span class="token punctuation">,</span> <span class="token string">'311-10935466'</span><span class="token punctuation">,</span> <span class="token string">'311-1093554df0'</span><span class="token punctuation">]</span><br><span class="token punctuation">}</span><br>headers <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br><span class="token punctuation">}</span><br><br>response <span class="token operator">=</span> requests<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token string">"POST"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>payload<span class="token punctuation">)</span><br><br><span class="token function">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<div class="spacer-2"></div>
+<p><strong>Response Schema</strong></p>
+<hr>
+<p><strong>SRResponses</strong> <em>array</em></p>
+<p>A list of Service Requests that match the SRNumbers.</p>
+<blockquote>
+<p><strong>SRResponses.SRNumber</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>The id of the Service Request.</p>
+</blockquote>
+<blockquote>
+<p><strong>SRResponses.Agency</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>The city agency relevant to the Service Request.</p>
+</blockquote>
+<blockquote>
+<p><strong>SRResponses.Problem</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>The topic category of the Service Request.</p>
+</blockquote>
+<blockquote>
+<p><strong>SRResponses.ProblemDetails</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>The subcategory of the Service Request.</p>
+</blockquote>
+<blockquote>
+<p><strong>SRResponses.AdditionalDetails</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>A description of the Service Request.</p>
+</blockquote>
+<blockquote>
+<p><strong>SRResponses.Status</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>A status code of the Service Request.</p>
+</blockquote>
+<blockquote>
+<p>614110001: Open</p>
+</blockquote>
+<blockquote>
+<p>614110002: In Progress</p>
+</blockquote>
+<blockquote>
+<p>614110000: Cancel</p>
+</blockquote>
+<blockquote>
+<p>614110003: Closed</p>
+</blockquote>
+<blockquote>
+<p><strong>SRResponses.DateTimeSubmitted</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>The date and time of when the Service Request was created in the format <code>YYYY-MM-DD&quot;T&quot;HH:MM:SS</code>.</p>
+</blockquote>
+<blockquote>
+<p><strong>SRResponses.SLARemainingDays</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>The number of days left to resolve the open Service Request in accordance with NYC 311’s Service-Level Agreement.</p>
+</blockquote>
+<blockquote>
+<p><strong>SRResponses.ResolutionAction</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>A description of the issue resolution when the Service Request closed.</p>
+</blockquote>
+<blockquote>
+<p><strong>SRResponses.ResolutionActionUpdatedDate</strong> <em>string</em></p>
+</blockquote>
+<blockquote>
+<p>The date and time of when the Service Request closed in the format <code>YYYY-MM-DD&quot;T&quot;HH:MM:SS</code>.</p>
+</blockquote>
+<blockquote>
+<p><strong>SRResponses.Address</strong> <em>object</em></p>
+</blockquote>
+<blockquote>
+<p>The location of interest reported by the Service Request.</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>SRResponses.Address.Borough</strong> <em>string</em></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>The New York City borough of interest.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>SRResponses.Address.FullAddress</strong> <em>string</em></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>The street address of interest.</p>
+</blockquote>
+</blockquote>
+<div class="spacer-2"></div>
+<p><strong>Response Example</strong></p>
+<hr>
+<pre class="language-json"><code class="language-json"><span class="token comment">// Request Body { SRNumbers: ["311-10935582", "311-10935466", "311-10935540"] }</span><br><span class="token comment">// 200 OK Response</span><br><br><span class="token punctuation">{</span><br>    <span class="token property">"SRResponses"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"SRNumber"</span><span class="token operator">:</span> <span class="token string">"311-10935540"</span><span class="token punctuation">,</span><br>            <span class="token property">"Agency"</span><span class="token operator">:</span> <span class="token string">"Department of Sanitation"</span><span class="token punctuation">,</span><br>            <span class="token property">"Problem"</span><span class="token operator">:</span> <span class="token string">"Missed Collection"</span><span class="token punctuation">,</span><br>            <span class="token property">"ProblemDetails"</span><span class="token operator">:</span> <span class="token string">"Compost"</span><span class="token punctuation">,</span><br>            <span class="token property">"AdditionalDetails"</span><span class="token operator">:</span> <span class="token string">"N/A"</span><span class="token punctuation">,</span><br>            <span class="token property">"ResolutionActionUpdatedDate"</span><span class="token operator">:</span> <span class="token string">"2022-07-08T13:02:55"</span><span class="token punctuation">,</span><br>            <span class="token property">"Status"</span><span class="token operator">:</span> <span class="token string">"614110003"</span><span class="token punctuation">,</span><br>            <span class="token property">"DateTimeSubmitted"</span><span class="token operator">:</span> <span class="token string">"2022-07-07T14:54:11"</span><span class="token punctuation">,</span><br>            <span class="token property">"ResolutionAction"</span><span class="token operator">:</span> <span class="token string">"The Department of Sanitation investigated this complaint and found no condition at the location."</span><span class="token punctuation">,</span><br>            <span class="token property">"Address"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>                <span class="token property">"Borough"</span><span class="token operator">:</span> <span class="token string">"BROOKLYN"</span><span class="token punctuation">,</span><br>                <span class="token property">"FullAddress"</span><span class="token operator">:</span> <span class="token string">"336 3 STREET, BROOKLYN, NY, 11215"</span><br>            <span class="token punctuation">}</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"SRNumber"</span><span class="token operator">:</span> <span class="token string">"311-10935466"</span><span class="token punctuation">,</span><br>            <span class="token property">"Agency"</span><span class="token operator">:</span> <span class="token string">"Department of Environmental Protection"</span><span class="token punctuation">,</span><br>            <span class="token property">"Problem"</span><span class="token operator">:</span> <span class="token string">"Noise"</span><span class="token punctuation">,</span><br>            <span class="token property">"ProblemDetails"</span><span class="token operator">:</span> <span class="token string">"Jackhammer"</span><span class="token punctuation">,</span><br>            <span class="token property">"AdditionalDetails"</span><span class="token operator">:</span> <span class="token string">"N/A"</span><span class="token punctuation">,</span><br>            <span class="token property">"Status"</span><span class="token operator">:</span> <span class="token string">"614110002"</span><span class="token punctuation">,</span><br>            <span class="token property">"DateTimeSubmitted"</span><span class="token operator">:</span> <span class="token string">"2022-07-07T14:51:35"</span><span class="token punctuation">,</span><br>            <span class="token property">"SLARemainingDays"</span><span class="token operator">:</span> <span class="token string">"7"</span><span class="token punctuation">,</span><br>            <span class="token property">"Address"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>                <span class="token property">"Borough"</span><span class="token operator">:</span> <span class="token string">"BROOKLYN"</span><span class="token punctuation">,</span><br>                <span class="token property">"FullAddress"</span><span class="token operator">:</span> <span class="token string">"128 PROSPECT STREET, BROOKLYN, NY, 11201"</span><br>            <span class="token punctuation">}</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"SRNumber"</span><span class="token operator">:</span> <span class="token string">"311-10935582"</span><span class="token punctuation">,</span><br>            <span class="token property">"Agency"</span><span class="token operator">:</span> <span class="token string">"Department of Housing Preservation and Development"</span><span class="token punctuation">,</span><br>            <span class="token property">"Problem"</span><span class="token operator">:</span> <span class="token string">"Unsanitary Condition"</span><span class="token punctuation">,</span><br>            <span class="token property">"ProblemDetails"</span><span class="token operator">:</span> <span class="token string">"Garbage/Recycling Storage"</span><span class="token punctuation">,</span><br>            <span class="token property">"AdditionalDetails"</span><span class="token operator">:</span> <span class="token string">"Missing or Inadequate Cans/Lid"</span><span class="token punctuation">,</span><br>            <span class="token property">"Status"</span><span class="token operator">:</span> <span class="token string">"614110002"</span><span class="token punctuation">,</span><br>            <span class="token property">"DateTimeSubmitted"</span><span class="token operator">:</span> <span class="token string">"2022-07-07T14:50:17"</span><span class="token punctuation">,</span><br>            <span class="token property">"Address"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>                <span class="token property">"Borough"</span><span class="token operator">:</span> <span class="token string">"MANHATTAN"</span><span class="token punctuation">,</span><br>                <span class="token property">"FullAddress"</span><span class="token operator">:</span> <span class="token string">"435 FORT WASHINGTON AVENUE, MANHATTAN (NEW YORK), NY, 10033"</span><br>            <span class="token punctuation">}</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+<div class="spacer-2"></div>
+<h2><a name="statuses"></a> Statuses</h2>
+<p>The statuses of New York City’s weather emergencies.</p>
+<div class="spacer-2"></div>
+<h3><b class="text-p-color">GET</b> /Status/CodeBlue</h3>
+<p>Get the status of Code Blue — a weather emergency issued when outside temperature drops below 32 degrees Farenheight between 8 p.m. and 4 a.m. No one who is homeless and seeking shelter in New York City during Code Blue will be denied.</p>
+<div class="spacer-2"></div>
+<p><strong>Request Examples</strong></p>
+<hr>
+<ul>
+<li>
+<p>cURL</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> --location --request GET <span class="token string">"https://api.nyc.gov/public/api/Status/CodeBlue"</span> --header <span class="token string">"Ocp-Apim-Subscription-Key: {API Key}"</span></code></pre>
+</li>
+<li>
+<p>Javascript - Node.js</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">var</span> request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'method'</span><span class="token operator">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'url'</span><span class="token operator">:</span> <span class="token string">'https://api.nyc.gov/public/api/Status/CodeBlue'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'headers'</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token function">request</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li>
+<p>Python - Requests</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> requests<br><br>url <span class="token operator">=</span> <span class="token string">"https://api.nyc.gov/public/api/Status/CodeBlue"</span><br><br>payload<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span><br>headers <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br><span class="token punctuation">}</span><br><br>response <span class="token operator">=</span> requests<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>payload<span class="token punctuation">)</span><br><br><span class="token function">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<div class="spacer-2"></div>
+<p><strong>Response Schema</strong></p>
+<hr>
+<p><strong>inEffect</strong> <em>boolean</em></p>
+<p>Indicates whether Code Blue is in effect.</p>
+<div class="spacer-2"></div>
+<p><strong>Response Examples</strong></p>
+<hr>
+<pre class="language-json"><code class="language-json"><span class="token comment">// 200 OK Response</span><br><br><span class="token punctuation">{</span> <span class="token property">"inEffect"</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span></code></pre>
+<div class="spacer-2"></div>
+<h3><b class="text-p-color">GET</b> /Status/FireHydrant</h3>
+<p>Get the status of a Fire Hydrant emergency.</p>
+<div class="spacer-2"></div>
+<p><strong>Request Examples</strong></p>
+<hr>
+<ul>
+<li>
+<p>cURL</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> --location --request GET <span class="token string">"https://api.nyc.gov/public/api/Status/FireHydrant"</span> --header <span class="token string">"Ocp-Apim-Subscription-Key: {API Key}"</span></code></pre>
+</li>
+<li>
+<p>Javascript - Node.js</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">var</span> request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'method'</span><span class="token operator">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'url'</span><span class="token operator">:</span> <span class="token string">'https://api.nyc.gov/public/api/Status/FireHydrant'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'headers'</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token function">request</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li>
+<p>Python - Requests</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> requests<br><br>url <span class="token operator">=</span> <span class="token string">"https://api.nyc.gov/public/api/Status/FireHydrant"</span><br><br>payload<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span><br>headers <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br><span class="token punctuation">}</span><br><br>response <span class="token operator">=</span> requests<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>payload<span class="token punctuation">)</span><br><br><span class="token function">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<div class="spacer-2"></div>
+<p><strong>Response Schema</strong></p>
+<hr>
+<p><strong>inEffect</strong> <em>boolean</em></p>
+<p>Indicates whether a Fire Hydrant emergency is in effect.</p>
+<div class="spacer-2"></div>
+<p><strong>Response Examples</strong></p>
+<hr>
+<pre class="language-json"><code class="language-json"><span class="token comment">// 200 OK Response</span><br><br><span class="token punctuation">{</span> <span class="token property">"inEffect"</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span></code></pre>
+<div class="spacer-2"></div>
+<h3><b class="text-p-color">GET</b> /Status/SnowOnSidewalk</h3>
+<p>Get the status of a Snow On Sidewalk emergency.</p>
+<div class="spacer-2"></div>
+<p><strong>Request Examples</strong></p>
+<hr>
+<ul>
+<li>
+<p>cURL</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> --location --request GET <span class="token string">"https://api.nyc.gov/public/api/Status/SnowOnSidewalk"</span> --header <span class="token string">"Ocp-Apim-Subscription-Key: {API Key}"</span></code></pre>
+</li>
+<li>
+<p>Javascript - Node.js</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">var</span> request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'method'</span><span class="token operator">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'url'</span><span class="token operator">:</span> <span class="token string">'https://api.nyc.gov/public/api/Status/SnowOnSidewalk'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'headers'</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token function">request</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li>
+<p>Python - Requests</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> requests<br><br>url <span class="token operator">=</span> <span class="token string">"https://api.nyc.gov/public/api/Status/SnowOnSidewalk"</span><br><br>payload<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span><br>headers <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br><span class="token punctuation">}</span><br><br>response <span class="token operator">=</span> requests<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>payload<span class="token punctuation">)</span><br><br><span class="token function">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<div class="spacer-2"></div>
+<p><strong>Response Schema</strong></p>
+<hr>
+<p><strong>inEffect</strong> <em>boolean</em></p>
+<p>Indicates whether a Snow on Sidewalk emergency is in effect.</p>
+<div class="spacer-2"></div>
+<p><strong>Response Examples</strong></p>
+<hr>
+<pre class="language-json"><code class="language-json"><span class="token comment">// 200 OK Response</span><br><br><span class="token punctuation">{</span> <span class="token property">"inEffect"</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span></code></pre>
+<div class="spacer-2"></div>
+<h3><b class="text-p-color">GET</b> /Status/SnowOnStreet</h3>
+<p>Get the status of a Snow On Street emergency.</p>
+<div class="spacer-2"></div>
+<p><strong>Request Examples</strong></p>
+<hr>
+<ul>
+<li>
+<p>cURL</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> --location --request GET <span class="token string">"https://api.nyc.gov/public/api/Status/SnowOnStreet"</span> --header <span class="token string">"Ocp-Apim-Subscription-Key: {API Key}"</span></code></pre>
+</li>
+<li>
+<p>Javascript - Node.js</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">var</span> request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'method'</span><span class="token operator">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'url'</span><span class="token operator">:</span> <span class="token string">'https://api.nyc.gov/public/api/Status/SnowOnStreet'</span><span class="token punctuation">,</span><br>  <span class="token string-property property">'headers'</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token function">request</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li>
+<p>Python - Requests</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> requests<br><br>url <span class="token operator">=</span> <span class="token string">"https://api.nyc.gov/public/api/Status/SnowOnStreet"</span><br><br>payload<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span><br>headers <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token string-property property">'Ocp-Apim-Subscription-Key'</span><span class="token operator">:</span> <span class="token string">'{API Key}'</span><br><span class="token punctuation">}</span><br><br>response <span class="token operator">=</span> requests<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>payload<span class="token punctuation">)</span><br><br><span class="token function">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<div class="spacer-2"></div>
+<p><strong>Response Schema</strong></p>
+<hr>
+<p><strong>inEffect</strong> <em>boolean</em></p>
+<p>Indicates whether a Snow on Street emergency is in effect.</p>
+<div class="spacer-2"></div>
+<p><strong>Response Examples</strong></p>
+<hr>
+<pre class="language-json"><code class="language-json"><span class="token comment">// 200 OK Response</span><br><br><span class="token punctuation">{</span> <span class="token property">"inEffect"</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span></code></pre>
+<div class="spacer-2"></div>
+
+
+  <div class="post-tags">
+      <br><hr>
+      
+        <b>Tags: </b>
+        
+          
+        
+          
+            <a href="/tech_writing/tags/api">api</a>, 
+          
+        
+          
+            <a href="/tech_writing/tags/coding-examples">coding examples</a>, 
+          
+        
+          
+            <a href="/tech_writing/tags/data-schemas">data schemas</a>, 
+          
+        
+          
+            <a href="/tech_writing/tags/reference-docs">reference docs</a>, 
+          
+        
+          
+            <a href="/tech_writing/tags/guides">guides</a>
+          
+        
+      
+      <br><br>
+      <a href="/tech_writing/">&larr; Back home</a>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+  <footer class="footer">
+  &copy; 2022 - Home
+</footer>
+
+  <script>
+    const ham = document.querySelector('.navbar__hamburger')
+    const menu = document.querySelector('.navbar__mobile-links')
+    const darkToggleButtons = document.querySelectorAll('.dark-toggle')
+
+    function changeDarkToggleBtnIcon () {
+      darkToggleButtons.forEach(btn => {
+        if (btn.querySelector('img').src.indexOf('/static/img/moon.svg') !== -1) {
+          btn.querySelector('img').src = "/tech_writing/static/img/sun.svg"
+        } else {
+          btn.querySelector('img').src = "/tech_writing/static/img/moon.svg"
+        }
+      })
+    }
+
+    if (
+      localStorage.prefsDark === 'true' || 
+      (
+        window.matchMedia && 
+        window.matchMedia('(prefers-color-scheme: dark)').matches && 
+        localStorage.prefsDark !== 'false')
+      ) {
+      document.body.classList.add('dark')
+      changeDarkToggleBtnIcon()
+    }
+
+    ham.addEventListener('click', () => {
+      menu.classList.toggle('navbar__mobile-links--open')
+
+      let prevState = JSON.parse(ham.getAttribute('aria-expanded'))
+      ham.setAttribute('aria-expanded', !prevState)
+    })
+
+    darkToggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        changeDarkToggleBtnIcon()
+
+        if (document.body.classList.contains('dark')) {
+          document.body.classList.remove('dark')
+          localStorage.prefsDark = 'false'
+        } else {
+          document.body.classList.add('dark')
+          localStorage.prefsDark = 'true'
+        }
+
+      })
+    })
+  </script>
+</body>
+</html>
