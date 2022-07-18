@@ -2,7 +2,6 @@
 title: API Documentation
 date: 2022-07-06
 description: I wrote documentation for New York City's 311 Public API.
-postContainerSize: md
 sidebar:
   - {name: 'NYC 311', link: '#nyc-311'}
   - {name: 'API Overview', link: '#api-overview'}
@@ -31,8 +30,7 @@ tags:
 
 # NYC 311 Public API Documentation
 
-***A NOTE --*** New York City’s [developer documentation](https://api-portal.nyc.gov) is currently unusable. It suffers from several typos, blank sections, conflicting information, dead links, no data schemas, and no examples. So I built my own. Through trial and error, I experimented with the 311 Public API enough to fill in the gaps and offer myimprovements. 
-
+***A NOTE --*** New York City’s [developer documentation](https://api-portal.nyc.gov) is currently unusable. It suffers from several typos, blank sections, conflicting information, dead links, no data schemas, and no examples. So I built my own documentation. Through trial and error, I experimented with the 311 Public API enough to fill in the gaps and offer improvements.
 
 ## <a name="nyc-311"></a> NYC 311
 
@@ -149,7 +147,7 @@ Get a quick start and connect to the **NYC 311 Public API** by completing the fo
     <details open>
       <summary> Screenshot with annotations in <b style="color: red">red</b>.
       </summary>
-      <img src="{{'/static/img/quickStartGuideStep1.png' | url}}" style="width: 80%">
+      <img class="screenshot" src="{{'/static/img/quickStartGuideStep1.png' | url}}" style="width: 80%">
     </details>      
 
 2. Click *Products* at the top of the page.
@@ -157,7 +155,7 @@ Get a quick start and connect to the **NYC 311 Public API** by completing the fo
     <details >
       <summary> Screenshot with annotations in <b style="color: red">red</b>.
       </summary>
-      <img src="{{'/static/img/quickStartGuideStep2.png' | url}}" style="width: 80%">
+      <img class="screenshot" src="{{'/static/img/quickStartGuideStep2.png' | url}}" style="width: 80%">
     </details>  
         
 3. Select the *NYC 311 Public Developers* product.
@@ -165,7 +163,7 @@ Get a quick start and connect to the **NYC 311 Public API** by completing the fo
     <details >
       <summary> Screenshot with annotations in <b style="color: red">red</b>.
       </summary>
-      <img src="{{'/static/img/quickStartGuideStep3.png' | url}}" style="width: 80%">
+      <img class="screenshot" src="{{'/static/img/quickStartGuideStep3.png' | url}}" style="width: 80%">
     </details>  
         
 4. Type the name of your application and click the *Subscribe* button.
@@ -173,7 +171,7 @@ Get a quick start and connect to the **NYC 311 Public API** by completing the fo
     <details>
       <summary> Screenshot with annotations in <b style="color: red">red</b>.
       </summary>
-      <img src="{{'/static/img/quickStartGuideStep4.png' | url }}" style="width: 80%">
+      <img class="screenshot" src="{{'/static/img/quickStartGuideStep4.png' | url }}" style="width: 80%">
     </details>
         
 5. Click *Profile* at the tope of the page and find the new API Key under the section *Subscriptions.* It may take a few minutes for the API Key to be generated.
@@ -181,7 +179,7 @@ Get a quick start and connect to the **NYC 311 Public API** by completing the fo
     <details >
       <summary> Screenshot with annotations in <b style="color: red">red</b>.
       </summary>
-      <img src="{{'/static/img/quickStartGuideStep1.png' | url}}" style="width: 80%">
+      <img class="screenshot" src="{{'/static/img/quickStartGuideStep1.png' | url}}" style="width: 80%">
     </details>  
 
         

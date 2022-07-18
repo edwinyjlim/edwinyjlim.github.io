@@ -16,6 +16,15 @@ img {
   width: 100%;
   height: auto;
 }
+img.screenshot {
+  border: 1px solid;
+}
+img.profile-pic {
+  height: 175px;
+  width: 175px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 table {
   border-spacing: 0;
 }
@@ -185,6 +194,16 @@ body.dark .footer {
 .hero__techstack_col a {
   font-weight: 300;
 }
+.hero img.hello {
+  height: 2.5rem;
+  width: auto;
+}
+@media screen and (max-width: 769px) {
+  .hero img.hello {
+    height: 2rem;
+    width: auto;
+  }
+}
 .navbar {
   padding: 0.5rem 1rem;
   box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
@@ -280,9 +299,6 @@ body.dark .navbar__hamburger > svg {
   margin-top: 4rem;
   margin-bottom: 1.5rem;
   width: 65%;
-}
-.post img {
-  border: 1px solid;
 }
 .section-title {
   font-size: 1.2rem;
@@ -413,4 +429,7 @@ body.dark .card__date {
   .post_sidebar_nav {
     left: -225px;
   }
+}
+.about-profile-pic {
+  text-align: center;
 }

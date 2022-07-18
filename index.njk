@@ -18,7 +18,7 @@ eleventyNavigation:
     <h1>
       {% if site.hero.title %}
         {% if pagination.pageNumber != 0 %}Page {{ pagination.pageNumber + 1 }} | {% endif %}
-        Hello.
+        Hello <span><img class="hello" src="{{'/static/img/waving-hand.png' | url}}"> </span>
       {% else %}
         {{ site.meta.title }}
       {% endif %}
