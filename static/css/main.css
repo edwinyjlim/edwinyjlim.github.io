@@ -125,24 +125,29 @@ hr {
 .container,
 .container-sm,
 .container-md {
-  margin-left: 240px;
   padding: 1rem;
   padding-bottom: 2.5rem;
   max-width: 1025px;
   width: calc(100% - 2rem);
+  margin: 0 auto;
+}
+.container.post,
+.container-sm.post,
+.container-md.post {
+  margin-left: 240px;
 }
 @media screen and (max-width: 641px) {
-  .container,
-  .container-sm,
-  .container-md {
+  .container.post,
+  .container-sm.post,
+  .container-md.post {
     margin: 0 auto;
     max-width: 631px;
   }
 }
 @media screen and (max-width: 391px) {
-  .container,
-  .container-sm,
-  .container-md {
+  .container.post,
+  .container-sm.post,
+  .container-md.post {
     margin: 0 auto;
     max-width: 381px;
   }
@@ -217,10 +222,13 @@ body.dark .navbar {
   align-items: center;
   justify-content: space-between;
   max-width: 1025px;
+  margin: 0 auto;
+}
+.navbar__inner.post {
   margin-left: 240px;
 }
 @media screen and (max-width: 641px) {
-  .navbar__inner {
+  .navbar__inner.post {
     margin: 0 auto;
   }
 }
@@ -352,6 +360,11 @@ body.dark .card {
   .card__title {
     font-size: 1.44rem;
   }
+}
+.card__title .emoji {
+  height: 1.8rem;
+  width: auto;
+  float: right;
 }
 .card__date {
   margin-top: 0;

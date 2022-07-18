@@ -1,9 +1,9 @@
 ---
 title: About 
 description: All about me in this page
-layout: layouts/post.njk
+layout: layouts/page.njk
 hideTagsList: true
-postContainerSize: md
+containerSize: md
 eleventyNavigation:
   key: About 
   header: true

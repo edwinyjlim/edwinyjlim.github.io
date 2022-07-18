@@ -2,6 +2,7 @@
 title: API Documentation
 date: 2022-07-06
 description: I wrote documentation for the New York City 311 Public API.
+emojiPath: /static/img/statue-of-liberty.png
 sidebar:
   - {name: 'NYC 311', link: '#nyc-311'}
   - {name: 'API Overview', link: '#api-overview'}

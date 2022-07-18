@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="container{% if containerSize %}-{{containerSize}}{% endif %}">
+  {# <h1>{{ title }}</h1> #}
+
+  <div class="page_content">
+    {{ content | safe }}
+
+  <div class="post-tags">
+      <br><hr>
+      <br><br>
+      <a href="{{ '/' | url }}">&larr; Back home</a>
+    </div>
+
+  </div>
+
+
+
+</div>

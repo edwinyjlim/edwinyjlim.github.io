@@ -8,6 +8,7 @@
 
         <h3 class="card__title">
           <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+          <img class="emoji" src="{{ post.data.emojiPath | url}}">
         </h3>
         {#
         <p class="card__date">{{ post.date | readableDate }}

@@ -1,6 +1,7 @@
 {% set navPages = collections.all | eleventyNavigation %}
+
 <nav class="navbar">
-  <div class="navbar__inner">
+  <div class="navbar__inner {% if page.url.indexOf('posts') > -1 %} post {% endif %}">
     <a class="navbar__logo" href="{{ '/' | url }}">{{ site.meta.title }}</a>
 
     <div class="navbar__mobile-options">
