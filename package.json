@@ -9,8 +9,9 @@
     "watch:stylus": "stylus --watch ./stylus/ --out ./static/css/",
     "build:11ty": "eleventy",
     "watch:11ty": "eleventy --serve",
-    "build": "npm run build:stylus && eleventy",
-    "watch": "concurrently -n stylus,11ty \"yarn watch:stylus\" \"yarn watch:11ty\""
+    "build:dev": "npm run build:stylus && eleventy",
+    "watch": "concurrently -n stylus,11ty \"yarn watch:stylus\" \"yarn watch:11ty\"",
+    "build": "env NODE_ENV=production npx eleventy --pathprefix 'tech_writing'"
   },
   "author": "",
   "license": "ISC",
