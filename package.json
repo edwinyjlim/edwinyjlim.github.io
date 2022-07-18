@@ -11,7 +11,7 @@
     "watch:11ty": "eleventy --serve",
     "build:dev": "npm run build:stylus && eleventy",
     "watch": "concurrently -n stylus,11ty \"yarn watch:stylus\" \"yarn watch:11ty\"",
-    "build": "env NODE_ENV=production npx eleventy --pathprefix=tech_writing"
+    "build": "env NODE_ENV=production npx @11ty/eleventy --pathprefix=tech_writing"
   },
   "author": "",
   "license": "ISC",
