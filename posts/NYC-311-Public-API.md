@@ -149,7 +149,7 @@ Get a quick start and connect to the **NYC 311 Public API** by completing the fo
     <details open>
       <summary> Screenshot with annotations in <b style="color: red">red</b>.
       </summary>
-      <img src="{{'/img/quickStartGuideStep1.png' | url}}" style="width: 80%">
+      <img src="{{'/static/img/quickStartGuideStep1.png' | url}}" style="width: 80%">
     </details>      
 
 2. Click *Products* at the top of the page.
@@ -157,7 +157,7 @@ Get a quick start and connect to the **NYC 311 Public API** by completing the fo
     <details >
       <summary> Screenshot with annotations in <b style="color: red">red</b>.
       </summary>
-      <img src="{{'/img/quickStartGuideStep2.png' | url}}" style="width: 80%">
+      <img src="{{'/static/img/quickStartGuideStep2.png' | url}}" style="width: 80%">
     </details>  
         
 3. Select the *NYC 311 Public Developers* product.
@@ -165,7 +165,7 @@ Get a quick start and connect to the **NYC 311 Public API** by completing the fo
     <details >
       <summary> Screenshot with annotations in <b style="color: red">red</b>.
       </summary>
-      <img src="{{'/img/quickStartGuideStep3.png' | url}}" style="width: 80%">
+      <img src="{{'/static/img/quickStartGuideStep3.png' | url}}" style="width: 80%">
     </details>  
         
 4. Type the name of your application and click the *Subscribe* button.
@@ -173,7 +173,7 @@ Get a quick start and connect to the **NYC 311 Public API** by completing the fo
     <details>
       <summary> Screenshot with annotations in <b style="color: red">red</b>.
       </summary>
-      <img src="{{'/img/quickStartGuideStep4.png' | url }}" style="width: 80%">
+      <img src="{{'/static/img/quickStartGuideStep4.png' | url }}" style="width: 80%">
     </details>
         
 5. Click *Profile* at the tope of the page and find the new API Key under the section *Subscriptions.* It may take a few minutes for the API Key to be generated.
@@ -181,7 +181,7 @@ Get a quick start and connect to the **NYC 311 Public API** by completing the fo
     <details >
       <summary> Screenshot with annotations in <b style="color: red">red</b>.
       </summary>
-      <img src="{{'/img/quickStartGuideStep1.png' | url}}" style="width: 80%">
+      <img src="{{'/static/img/quickStartGuideStep1.png' | url}}" style="width: 80%">
     </details>  
 
         
