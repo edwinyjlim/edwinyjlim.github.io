@@ -1,7 +1,7 @@
 ---
 title: API Documentation
 date: 2022-07-06
-description: I wrote documentation for New York City's 311 Public API.
+description: I wrote documentation for the New York City 311 Public API.
 sidebar:
   - {name: 'NYC 311', link: '#nyc-311'}
   - {name: 'API Overview', link: '#api-overview'}
@@ -30,7 +30,7 @@ tags:
 
 # NYC 311 Public API Documentation
 
-***A NOTE --*** New York City’s [developer documentation](https://api-portal.nyc.gov) is currently unusable. It suffers from several typos, blank sections, conflicting information, dead links, no data schemas, and no examples. So I built my own documentation. Through trial and error, I experimented with the 311 Public API enough to fill in the gaps and offer improvements.
+***A NOTE --*** New York City’s [developer documentation](https://api-portal.nyc.gov) is near unusable. It suffers from several typos, blank sections, conflicting information, dead links, no data schemas, and no examples. So I wrote my own documentation. Through trial and error, I experimented with the 311 Public API enough to fill in the gaps and offer improvements.
 
 ## <a name="nyc-311"></a> NYC 311
 

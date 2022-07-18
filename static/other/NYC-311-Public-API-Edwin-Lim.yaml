@@ -1,6 +1,4 @@
 openapi: 3.1.0
-x-stoplight:
-  id: 5vtgcdj7f8frz
 info:
   title: NYC 311 Public API - Edwin Lim
   version: '1.0'

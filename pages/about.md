@@ -18,13 +18,8 @@ eleventyNavigation:
 
 </div>
 
-
-<div class="blah">
-EYL
-</div>
-
+<div class="spacer-3"></div>
 
 
 You can contact me at <span class="text-p-color">edwinyjlim@gmail.com</span>.
 
-Here is my resume.
