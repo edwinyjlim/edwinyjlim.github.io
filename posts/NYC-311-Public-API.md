@@ -52,7 +52,7 @@ This documentation is aimed to help developers integrate this data into their ap
 
 ## <a name="api-limits"></a> API Limits
 
-All API is restricted to a daily rate limit for requests. If your application requires an increased API rate limit, you must apply for a special API key.
+All API Keys are restricted to a daily rate limit for requests. If your application requires the API limit to be lifted, you must apply for a special API key.
 
 ## <a name="api-version"></a> API Version
 
