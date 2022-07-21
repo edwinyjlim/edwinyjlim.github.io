@@ -125,9 +125,9 @@ All responses are returned in the **JSON** format. Each response will have an HT
 
 ## <a name="authentication"></a> Authentication
 
-All requests must have a valid API Key ****in order to successfully call the **NYC 311 Public API**. Login to the **NYC API Developers Portal** at [https://api-portal.nyc.gov](https://api-portal.nyc.gov) to obtain an API Key.
+All requests must have a valid API Key in order to successfully call the **NYC 311 Public API**. Log in to the **NYC API Developers Portal** at [https://api-portal.nyc.gov](https://api-portal.nyc.gov) to obtain an API Key.
 
-Pass the API Key to the field `Ocp-Apim-Subscription-Key` in the HTTP request header.
+Pass the API Key to the field <span class="text-p-color">`Ocp-Apim-Subscription-Key`</span> in the HTTP request header.
 
 <div class="spacer-2"></div>
 
@@ -143,7 +143,7 @@ Ocp-Apim-Subscription-Key: {API Key}
 
 Get a quick start and connect to the **NYC 311 Public API** by completing the following steps.
 
-1. Create a profile and login to the **NYC API Developers Portal** at [https://api-portal.nyc.gov](https://api-portal.nyc.gov).
+1. Create a profile and log in to the **NYC API Developers Portal** at [https://api-portal.nyc.gov](https://api-portal.nyc.gov).
     
     <details open>
       <summary> Screenshot with annotations in <b style="color: red">red</b>.
