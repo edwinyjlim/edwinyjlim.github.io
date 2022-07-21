@@ -35,7 +35,7 @@ tags:
 
 ## <a name="nyc-311"></a> NYC 311
 
-NYC 311 is central hub for New York City’s municipal services and non-emergency issues reported by the community.  It can be accessed by telephone at 3-1-1 and by web at [https://portal.311.nyc.gov/](https://portal.311.nyc.gov/).
+NYC 311 is the central hub for New York City’s municipal services and non-emergency issues reported by the community.  It can be accessed by telephone at 3-1-1 and by web at [https://portal.311.nyc.gov/](https://portal.311.nyc.gov/).
 
 ## <a name="api-overview"></a> API Overview
 
