@@ -181,8 +181,8 @@
 <p><strong>500 Internal Service Error —</strong> The server cannot process the request.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"Error"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"Code"</span><span class="token operator">:</span> <span class="token string">"InternalServerError"</span><span class="token punctuation">,</span><br>    <span class="token property">"Message"</span><span class="token operator">:</span> <span class="token string">"No MediaTypeFormatter is available to read an object of type 'Object' from content with media type 'application/octet-stream'."</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2><a name="authentication"></a> Authentication</h2>
-<p>All requests must have a valid API Key ****in order to successfully call the <strong>NYC 311 Public API</strong>. Login to the <strong>NYC API Developers Portal</strong> at <a href="https://api-portal.nyc.gov">https://api-portal.nyc.gov</a> to obtain an API Key.</p>
-<p>Pass the API Key to the field <code>Ocp-Apim-Subscription-Key</code> in the HTTP request header.</p>
+<p>All requests must have a valid API Key in order to successfully call the <strong>NYC 311 Public API</strong>. Log in to the <strong>NYC API Developers Portal</strong> at <a href="https://api-portal.nyc.gov">https://api-portal.nyc.gov</a> to obtain an API Key.</p>
+<p>Pass the API Key to the field <span class="text-p-color"><code>Ocp-Apim-Subscription-Key</code></span> in the HTTP request header.</p>
 <div class="spacer-2"></div>
 <p><strong>Request Header Example</strong></p>
 <pre class="language-bash"><code class="language-bash">GET https://api.nyc.gov/public/api/Status/CodeBlue HTTP/1.1<br>Ocp-Apim-Subscription-Key: <span class="token punctuation">{</span>API Key<span class="token punctuation">}</span></code></pre>
@@ -190,7 +190,7 @@
 <p>Get a quick start and connect to the <strong>NYC 311 Public API</strong> by completing the following steps.</p>
 <ol>
 <li>
-<p>Create a profile and login to the <strong>NYC API Developers Portal</strong> at <a href="https://api-portal.nyc.gov">https://api-portal.nyc.gov</a>.</p>
+<p>Create a profile and log in to the <strong>NYC API Developers Portal</strong> at <a href="https://api-portal.nyc.gov">https://api-portal.nyc.gov</a>.</p>
  <details open>
    <summary> Screenshot with annotations in <b style="color: red">red</b>.
    </summary>
