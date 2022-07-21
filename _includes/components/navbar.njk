@@ -22,6 +22,8 @@
 
         {% if entry.header %}
 
+        {{ entry | log }}
+
         <a class="navbar__link {% if entry.url == page.url %}navbar__link--active{% endif %}" href="{{ entry.url | url }}">
           {{ entry.title }}
         </a>

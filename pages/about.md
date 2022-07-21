@@ -1,11 +1,11 @@
 ---
-title: About 
+title: About Me
 description: All about me in this page
 layout: layouts/page.njk
 hideTagsList: true
 containerSize: md
 eleventyNavigation:
-  key: About 
+  key: About Me
   header: true
   weight: 2
 ---
