@@ -6,8 +6,11 @@ description: I created an OpenAPI 3.1 specification document in YAML.
 emojiPath: /static/img/robot.png
 tags:
  - api
+ - rest
  - yaml
  - openapi 
+ - data schemas
+
 ---
 
 # OpenAPI 3.1 Spec

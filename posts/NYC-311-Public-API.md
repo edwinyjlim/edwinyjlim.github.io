@@ -23,10 +23,12 @@ sidebar:
 
 tags:
   - api
-  - coding examples
+  - rest
+  - javascript
+  - python
+  - curl
   - data schemas
-  - reference docs
-  - guides
+
 ---
 
 # NYC 311 Public API Documentation
