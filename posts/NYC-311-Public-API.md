@@ -27,7 +27,7 @@ tags:
   - javascript
   - python
   - curl
-  - JSON
+  - json
   - data schemas
 
 ---
