@@ -87,6 +87,11 @@
   </url>
   
   <url>
+    <loc>https://example.com/tags/json/</loc>
+    <lastmod>2022-07-25</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/tags/</loc>
     <lastmod>2022-07-25</lastmod>
   </url>
