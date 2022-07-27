@@ -24,7 +24,7 @@ I've worked in technology since 2012 as an Analyst, Software Engineer, and Busin
 
 I'm an illustrative communicator who likes to collaborate. 
 
-Talk to me about basketball, old movies, books, fishing, or your favorite late night-eats.
+Talk to me about basketball, old movies, books, fishing, or your favorite late-night eats.
 
 <div class="spacer-2"></div>
 
