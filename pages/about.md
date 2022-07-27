@@ -14,9 +14,7 @@ eleventyNavigation:
 <div class="spacer-1"></div>
 
 <div class="about-profile-pic">
-
   <img class="profile-pic" src="{{'/static/img/profile-pic.jpg' | url}}">
-
 </div>
 
 <div class="spacer-2"></div>

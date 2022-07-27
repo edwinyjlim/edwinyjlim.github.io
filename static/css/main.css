@@ -25,6 +25,12 @@ img.profile-pic {
   border-radius: 50%;
   object-fit: cover;
 }
+img.small-profile-pic {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 table {
   border-spacing: 0;
 }
@@ -141,7 +147,7 @@ hr {
   .container-sm.post,
   .container-md.post {
     margin: 0 auto;
-    max-width: 631px;
+    max-width: 621px;
   }
 }
 @media screen and (max-width: 391px) {
@@ -149,7 +155,7 @@ hr {
   .container-sm.post,
   .container-md.post {
     margin: 0 auto;
-    max-width: 381px;
+    max-width: 371px;
   }
 }
 .container-sm {
@@ -434,13 +440,14 @@ body.dark .card__date {
   padding: 1rem;
   font-size: 15px;
   transition: all 0.5s ease;
+  background-color: rgba(255,255,255,0.9);
 }
 .post_sidebar_nav .post_sidebar_nav_link {
   margin: 0.25rem 0;
 }
 @media screen and (max-width: 641px) {
   .post_sidebar_nav {
-    left: -225px;
+    left: -400px;
   }
 }
 .about-profile-pic {

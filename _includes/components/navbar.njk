@@ -18,6 +18,7 @@
 
     <div class="navbar__links">
       
+      
       {% for entry in navPages %}
 
         {% if entry.header %}
@@ -28,9 +29,18 @@
           {{ entry.title }}
         </a>
 
+
+        {% if page.fileSlug !== 'about'%}
+        <a href="{{'/pages/about' | url}}">
+          <img class="small-profile-pic" src="{{'/static/img/profile-pic.jpg' | url}}">
+        </a>
+        {% endif %}
+
+
         {% endif %}
 
       {%- endfor %}
+
 
       <div class="navbar__button dark-toggle" aria-label="toggle dark theme">
         <img src="{{ '/static/img/moon.svg' | url }}" alt="">
