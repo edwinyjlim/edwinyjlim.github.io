@@ -35,6 +35,7 @@
     <div class="navbar__links">
       
       
+      
 
         
 
@@ -46,9 +47,18 @@
           About Me
         </a>
 
+
+        
+        <a href="/pages/about">
+          <img class="small-profile-pic" src="/static/img/profile-pic.jpg">
+        </a>
+        
+
+
         
 
         
+
 
       <div class="navbar__button dark-toggle" aria-label="toggle dark theme">
         <img src="/static/img/moon.svg" alt="">
@@ -1060,8 +1070,6 @@
     if( localStorage.prefsDark === 'true' )
 
     {
-
-      console.log('11111111111111111111111111111111', localStorage, window.watchMedia)
 
       document.body.classList.add('dark')
       changeDarkToggleBtnIcon()
