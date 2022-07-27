@@ -1,4 +1,4 @@
-#Hi
+# Hi
 
-This is a static site I built for my portfolio of technical writing samples.
+This is a static site I'm buildling for my portfolio of technical writing samples.
 
