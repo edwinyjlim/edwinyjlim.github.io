@@ -34,7 +34,7 @@ tags:
 
 # NYC 311 Public API Documentation
 
-***A NOTE --*** New York City’s [developer documentation](https://api-portal.nyc.gov) is near unusable. It suffers from several typos, blank sections, conflicting information, dead links, no data schemas, and no examples. So I wrote my own documentation. Through trial and error, I experimented with the 311 Public API enough to fill in the gaps and offer improvements.
+***A NOTE --*** New York City’s [developer documentation](https://api-portal.nyc.gov) is near unusable. It suffers from several typos, blank sections, conflicting information, dead links, no data schemas, and no examples. So, I wrote my own documentation. Through trial and error, I experimented with the 311 Public API enough to fill in the gaps and offer improvements.
 
 ## <a name="nyc-311"></a> NYC 311
 
