@@ -267,9 +267,10 @@ var style = {
 
 </div> 
 
+<div id="magic-change4"></div>
+
 <div class="spacer-3"></div>
 
-<div id="magic-change4"></div>
 
 ```javascript
 /** Add Stytch more auth flows to your login form **/
@@ -298,6 +299,12 @@ It only takes a few minutes. Authentcation doesn't have to be a blackhole of pro
 
 Jump into the [Stytch Docs](https://stytch.com/docs/sdks/javascript-sdk) for implementation guides and examples applications.
 
+
+<div class="spacer-5"></div>
+
+<div class="spacer-5"></div>
+
+<div class="spacer-5"></div>
 
 
 
