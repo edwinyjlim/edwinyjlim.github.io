@@ -314,6 +314,26 @@ body.dark .navbar__hamburger > svg {
   margin-bottom: 1.5rem;
   width: 65%;
 }
+.stytch-container {
+  display: flex;
+  overflow: auto;
+}
+.stytch-container .stytch-instruction {
+  font-size: 1.4rem;
+  vertical-align: middle;
+  padding: 100px 0;
+}
+.stytch-container #stytch-magic-link {
+  padding-left: 220px;
+  transition: all 0.5s ease;
+}
+.stytch-container #stytch-magic-link.sticky {
+  position: absolute;
+  width: auto;
+}
+.stytch-container .stytch-block {
+  width: 50%;
+}
 .section-title {
   font-size: 1.2rem;
   font-weight: 500;
@@ -420,6 +440,15 @@ body.dark .card__date {
 }
 .spacer-4 {
   margin: 4rem 0;
+}
+.spacer-5 {
+  margin: 5rem 0;
+}
+.spacer-6 {
+  margin: 6rem 0;
+}
+.spacer-7 {
+  margin: 7rem 0;
 }
 .pagination {
   display: flex;

@@ -23,7 +23,6 @@
 
         {% if entry.header %}
 
-        {{ entry | log }}
 
         <a class="navbar__link {% if entry.url == page.url %}navbar__link--active{% endif %}" href="{{ entry.url | url }}">
           {{ entry.title }}
@@ -40,11 +39,6 @@
         {% endif %}
 
       {%- endfor %}
-
-
-      <div class="navbar__button dark-toggle" aria-label="toggle dark theme">
-        <img src="{{ '/static/img/moon.svg' | url }}" alt="">
-      </div>
 
     </div>
   </div>
