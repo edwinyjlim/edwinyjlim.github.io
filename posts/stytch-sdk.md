@@ -187,6 +187,7 @@ The <b class="text-p-color">Stytch SDKs</b> can render a  stylized login form in
 
   <div class="stytch-block stytch-instruction">
     Ta-Daa! You just created a Stytch login form in <b class="text-p-color">minutes</b> with the <b class="text-p-color">Stytch SDK</b> and 4 lines of code!
+    <b class="text-p-color"> ---> </b>
   </div>
   <div id="stytch-magic-link" class="stytch-block"></div>
 
@@ -335,6 +336,7 @@ Jump into the [Stytch Docs](https://stytch.com/docs/sdks/javascript-sdk) for imp
     var changeOffset5 = getOffset(document.getElementById('magic-change5'));
 
 
+    var changeInEffect = 0;
 
 
     window.addEventListener("scroll", (event) => {
@@ -350,7 +352,6 @@ Jump into the [Stytch Docs](https://stytch.com/docs/sdks/javascript-sdk) for imp
         } else {
           let stytchEl = document.getElementById('stytch-magic-link');
 
-          console.log(scrollYBuffer, changeOffset5.top)
 
           let stytchElOffset = getOffset(stytchEl);
 
@@ -363,32 +364,54 @@ Jump into the [Stytch Docs](https://stytch.com/docs/sdks/javascript-sdk) for imp
         }
 
         if ( scrollYBuffer < changeOffset1.top) {
+
+          if (changeInEffect !== 0) {
+            changeInEffect = 0;
             mountStytch()
+          } 
+
         } else if (scrollYBuffer > changeOffset1.top && scrollYBuffer < changeOffset2.top) {
-            console.log('~~~~~~~~~~~~CHANGE 1~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-            mountStytch({
-              primaryColor: 'blue', 
-              primaryTextColor: 'blue'
-            })
+
+            if (changeInEffect !== 1) {
+
+              console.log('~~~~~~~~~~~~CHANGE 1~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+            
+              changeInEffect = 1;
+              mountStytch({
+                primaryColor: 'blue', 
+                primaryTextColor: 'blue'
+              })
+            } 
+
         } else if (scrollYBuffer > changeOffset1.top && scrollYBuffer > changeOffset2.top && scrollYBuffer < changeOffset3.top) {
+
+          if (changeInEffect !== 2) {
             console.log('~~~~~~~~~~~~CHANGE 2~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+            
+            changeInEffect = 2;
             mountStytch({
               fontFamily: '"Comic Sans MS", "Comic Sans", cursive;',
               primaryColor: 'red', 
               primaryTextColor: 'red'
             })
+          }
         } else if (scrollYBuffer > changeOffset1.top && scrollYBuffer > changeOffset2.top && scrollYBuffer > changeOffset3.top && scrollYBuffer < changeOffset4.top) {
+
+          if (changeInEffect !== 3) {
+
             console.log('~~~~~~~~~~~~CHANGE 3~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+   
+            changeInEffect = 3; 
             mountStytch({
               fontFamily: '"Times New Roman", Times, serif',
               primaryTextColor: 'green',
               primaryColor: 'green',
               secondaryTextColor: 'darkgreen',
-              width: '450px'
+              width: '420px'
             })
+          }
         } else if (scrollYBuffer > changeOffset1.top && scrollYBuffer > changeOffset2.top && scrollYBuffer > changeOffset3.top  && scrollYBuffer > changeOffset4.top) {
 
-            console.log('~~~~~~~~~~~~CHANGE 4~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 
           var newLoginConfig = {
             products: ['oauth', 'otp'],
@@ -409,6 +432,11 @@ Jump into the [Stytch Docs](https://stytch.com/docs/sdks/javascript-sdk) for imp
             }
           };
 
+          if (changeInEffect !== 4) {
+
+            console.log('~~~~~~~~~~~~CHANGE 4~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+            changeInEffect = 4;
             mountStytch({
               fontFamily: '"Helvetica New", Helvetica, sans-serif',
               primaryColor: '#000000',
@@ -419,6 +447,7 @@ Jump into the [Stytch Docs](https://stytch.com/docs/sdks/javascript-sdk) for imp
              darkGrey:'green'
             }, 
             newLoginConfig)
+          }
         }
 
     });

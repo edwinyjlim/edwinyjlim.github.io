@@ -324,12 +324,15 @@ body.dark .navbar__hamburger > svg {
   padding: 100px 0;
 }
 .stytch-container #stytch-magic-link {
-  padding-left: 220px;
+  padding: 15px;
+  margin-left: 200px;
   transition: all 0.5s ease;
+  box-shadow: #888 5px 5px 8px;
 }
 .stytch-container #stytch-magic-link.sticky {
   position: absolute;
   width: auto;
+  margin-left: 0px;
 }
 .stytch-container .stytch-block {
   width: 50%;
