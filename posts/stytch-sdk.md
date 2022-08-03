@@ -22,7 +22,7 @@ We'll show you how.
 
 Tech teams spend thousands of hours planning, building, and maintaining their own authentication codebase. And in spite of all that effort, everything can still go wrong. [Security threats are always popping up](https://stytch.com/blog/password-reuse-is-a-cybersecurity-threat/). [Session and user management grow in scale and complexity](https://gupta-bless.medium.com/session-management-issues-and-their-testing-5cb910016bb0). [Password-based logins are becoming a painful and outdated experience for users to deal with](https://stytch.com/blog/building-the-future-of-authentication/). The list of problems keeps growing and your development time limited.
 
-Let Stytch handle authentication, so you can get back to what matters -- building your application. The Stytch platform will improve security, streamline infrastructure, and create seamless user experiences.
+Let Stytch handle authentication, so you can get back to what matters -- building your application. The Stytch platform will improve security, streamline infrastructure, and create friction-free user experiences.
 
 The <b class="text-p-color">Stytch SDKs</b> can save you thousands of hours of development.
 
