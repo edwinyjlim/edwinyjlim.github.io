@@ -8,7 +8,7 @@ tags:
 ---
 
 
-### <span class="text-p-color">The Stytch SDKs</span>: Build Login forms In Minutes
+### <span class="text-p-color">The Stytch SDKs</span>: Build Login Forms In Minutes
 
 Stytch is designed to let you build passswordless authentication quickly, securely, and seamlessly. And now with <b class="text-p-color">Stytch SDKs</b>, you can build login forms in just a few minutes. 
 
