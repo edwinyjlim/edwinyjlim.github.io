@@ -274,7 +274,7 @@ var style = {
 
 
 ```javascript
-/** Add Stytch more auth flows to your login form **/
+/** Add Stytch oAuth flows to your login form **/
 var loginOrSignupView = {
 
   products: ['emailMagicLinks', 'oauth'],
