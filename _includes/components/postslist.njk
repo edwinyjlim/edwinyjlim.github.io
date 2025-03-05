@@ -12,14 +12,14 @@
     {% endif %}
 
         <h3 class="card__title">
-          <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+          <a>{{ post.data.title }}</a>
           <img class="emoji" src="{{ post.data.emojiPath | url}}">
         </h3>
         {#
         <p class="card__date">{{ post.date | readableDate }}
         #}
         </p>
-        <p class="card__description">{{ post.data.description | safe }}</p>
+        <span class="card__description">{{ post.data.description | safe }}</span>
         <p class="card__subtitle"></p>
   
       <div class="card__tags">
