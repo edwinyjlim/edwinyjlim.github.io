@@ -340,6 +340,7 @@ body.dark .navbar__hamburger > svg {
 .section-title {
   font-size: 1.2rem;
   font-weight: 500;
+  margin-bottom: 20px;
 }
 body.dark .section-title {
   color: #ccc;
@@ -381,13 +382,13 @@ body.dark .card {
   box-shadow: 0 0 0 1px rgba(255,255,255,0.1) , 0 2px 2px rgba(255,255,255,0.1) , 0 4px 4px rgba(255,255,255,0.1) , 0 6px 6px rgba(255,255,255,0.2);
 }
 .card__title {
-  font-size: 1.266rem;
+  font-size: 1.125rem;
   margin-top: 0;
   margin-bottom: 0.1rem;
 }
 @media screen and (min-width: 641px) {
   .card__title {
-    font-size: 1.44rem;
+    font-size: 1.2rem;
   }
 }
 .card__title .emoji {

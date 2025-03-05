@@ -10,6 +10,7 @@ tags:
  - yaml
  - openapi 
  - data schemas
+ - spec
 
 ---
 

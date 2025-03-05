@@ -1,5 +1,5 @@
 ---
-title: API Documentation
+title: NYC API Documentation
 date: 2022-07-06
 description: I wrote documentation for the New York City 311 Public API.
 emojiPath: /static/img/statue-of-liberty.png
@@ -28,13 +28,14 @@ tags:
   - python
   - curl
   - json
+  - quickstart
   - data schemas
 
 ---
 
 # NYC 311 Public API Documentation
 
-***A NOTE —*** New York City’s [developer documentation](https://api-portal.nyc.gov) is near unusable. It suffers from several typos, blank sections, and a severe lack of developer resources like   response, data schemas, and examples. So I wrote my own documentation. 
+***A NOTE —*** New York City’s [developer documentation](https://api-portal.nyc.gov) is near unusable. It suffers from several typos, blank sections, and a severe lack of developer resources like example requests, data schemas, and a quickstart guide. So I wrote my own documentation. 
 
 Through trial and error, I experimented with the 311 Public API enough to fill in the gaps and offer improvements.
 
