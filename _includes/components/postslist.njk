@@ -4,7 +4,12 @@
   {% if post.data.ignore %}
 
   {% else %}
-    <div class="card" onclick="location.href ='{{post.url | url}}'">
+
+    {% if post.data.externalLink %}
+      <div class="card" onclick="location.href ='{{post.data.externalLink }}'">
+    {% else %}
+      <div class="card" onclick="location.href ='{{post.url | url}}'">
+    {% endif %}
 
         <h3 class="card__title">
           <a href="{{ post.url | url }}">{{ post.data.title }}</a>

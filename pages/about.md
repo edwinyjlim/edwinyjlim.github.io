@@ -20,11 +20,11 @@ eleventyNavigation:
 <div class="spacer-2"></div>
 
 
-I've worked in technology since 2012 as an Analyst, Software Engineer, and Business Architect. I live in Brooklyn and am currently looking for a role as a Technical Writer.
+I've worked in technology since 2012 as a Technical Writer, Software Engineer, Business Architect, and Analyst. I live in the East Coast and am currently looking for a role as a Technical Writer.
 
-I'm an illustrative communicator who likes to collaborate. 
+I'm an illustrative communicator who enjoys collaborating with others. 
 
-Talk to me about books, basketball, old movies, fishing, or your favorite late-night eats.
+Talk to me about books, basketball, old movies, or your favorite late-night eats.
 
 <div class="spacer-2"></div>
 

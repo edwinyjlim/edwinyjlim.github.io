@@ -35,11 +35,11 @@ eleventyNavigation:
     #}
 
     <p class="hero__description">
-      I'm <a class="text-p-color" style="font-weight: 500;">Edwin Lim</a> and this is my portfolio of technical writing samples.
+      I'm <a class="text-p-color" style="font-weight: 500;">Edwin Lim</a> and this is my portfolio of technical writing.
     </p>
 
 
-    <div class="spacer-3"></div>
+    <div class="spacer-2"></div>
     
     <p class="hero__otherinfo">
       I built this site with the following tech stack: 
@@ -66,22 +66,13 @@ eleventyNavigation:
   </div>
 
 
-  <div class="spacer-3"></div>
+  <div class="spacer-2"></div>
 
 
   <h2 class="section-title">
     Writing Samples
-    {%- if pagination.pageNumber != 0 %} - Page {{ pagination.pageNumber + 1 }}{% endif %}
   </h2> 
   
   {% include "components/postslist.njk" %}
 
-  <div class="pagination">
-      {% if pagination.previous %}
-        <a href="{{ pagination.href.previous | url }}" class="pagination__prev">&larr; Prev Page</a>
-      {% endif %}
-      {% if pagination.next %}
-        <a href="{{ pagination.href.next | url }}" class="pagination__next">Next Page &rarr;</a>
-      {% endif %}
-  </div>
 </div>
