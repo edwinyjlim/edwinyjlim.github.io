@@ -10,6 +10,8 @@ module.exports = (config) => {
 
   config.addPassthroughCopy('css');
   config.addPassthroughCopy('static');
+
+  config.addPassthroughCopy({ 'static/other/robots.txt': '/robots.txt' });
   
   config.setDataDeepMerge(true);
 
