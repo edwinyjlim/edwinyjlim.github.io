@@ -5,7 +5,7 @@ layout: layouts/base.njk
 permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}
 pagination:
   data: collections.post
-  size: 6
+  size: 9
   alias: posts
   reverse: true
 eleventyNavigation:
@@ -16,26 +16,11 @@ eleventyNavigation:
 <div class="container">
   <div class="hero">
     <h1>
-      {% if site.hero.title %}
-        {% if pagination.pageNumber != 0 %}Page {{ pagination.pageNumber + 1 }} | {% endif %}
-        Hello <span><img class="hello" src="{{'/static/img/waving-hand.png' | url}}"> </span>
-      {% else %}
-        {{ site.meta.title }}
-      {% endif %}
+      Hello <span><img class="hello" src="{{'/static/img/waving-hand.png' | url}}"> </span>
     </h1>
-
-    {#
+    
     <p class="hero__description">
-      {% if site.hero.description %}
-        {{ site.hero.description }}
-      {% else %}
-        {{ site.meta.description }}
-      {% endif %}
-    </p>
-    #}
-
-    <p class="hero__description">
-      I'm <a class="text-p-color" style="font-weight: 500;">Edwin Lim</a> and this is my portfolio of technical writing.
+      I'm <a href="/pages/about" class="text-p-color" style="font-weight: 500;">Edwin Lim</a> and this is my portfolio of technical writing.
     </p>
 
 
@@ -70,7 +55,7 @@ eleventyNavigation:
 
 
   <h2 class="section-title">
-    Writing Samples
+    Portfolio
   </h2> 
   
   {% include "components/postslist.njk" %}

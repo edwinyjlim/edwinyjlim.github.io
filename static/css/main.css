@@ -422,6 +422,7 @@ body.dark .card__date {
   z-index: 1;
 }
 .card__tags a {
+  color: #535353;
   border: 1px solid;
   border-radius: 3px;
   padding: 0px 4px;
